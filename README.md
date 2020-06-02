@@ -1,6 +1,6 @@
 
 
-![Alt text](siteicon.png)
+![Alt text](front.png)
 
 # Front V.0.1
 ## A Front Doors Framework dedicated to Kairos Club projects
