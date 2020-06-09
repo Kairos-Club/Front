@@ -1,0 +1,99 @@
+
+/* UI Colors */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$color-default: #000000;
+.color-default { color: $color-default }
+
+$color-one: #ff00ff;
+.color-one { color: $color-one }
+
+$color-one-50: rgba(255, 0, 255, 0.20);
+.color-one-50 { color: $color-one-50 }
+
+$color-two: #EFEFEF;
+.color-two { color: $color-two }
+
+$color-tree: #FFFFFF;
+.color-tree { color: $color-tree }
+
+/* Shop Colors */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$color-add-cart: #8ce99a;
+.color-add-cart { color: $color-add-cart }
+
+$color-in-wishlist: #ff4758;
+$color-in-cart: #6666FF;
+
+/* System Colors */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$color-info: #6666FF;
+.color-info { color: $color-info }
+
+$color-warning: #fcc419;
+.color-warning { color: $color-warning }
+
+$color-error: #ff4758;
+.color-error { color: $color-error }
+
+$color-valid: #40c057;
+.color-valid { color: $color-valid }
+
+$color-required: #fff3bf;
+.color-required { color: $color-required }
+
+$color-mark: #b2f2bb;
+.color-mark { color: $color-mark }
+
+$color-abbr: #fff3bf;
+.color-abbr { color: $color-abbr }
+
+/* Dedicate UI Colors */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$color-disco-craft: #FFE1C3;
+.color-disco-craft { color: $color-disco-craft }
+
+$color-premium-cyan: #00FFFF;
+.color-premium-cyan { color: $color-premium-cyan }
+
+$color-premium-black: #5E5E5E;
+.color-premium-black { color: $color-premium-black }
+
+/* Gradient */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.gradient-global {
+ background: linear-gradient(135deg,
+         rgba(102, 102, 255, 0.7) 0%,
+         rgba(0, 255, 255, 1) 100%);
+}
+
+.gradient-discovering {
+ background: linear-gradient(to bottom,
+         rgba(102, 102, 255, 1) 30%,
+         rgba(102, 102, 255, 0.5) 75%);
+}
+
+/* System Colors Class
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.warning { color: $color-warning }
+.warning::placeholder { color: $color-warning }
+label.warning { color: $color-warning !important }
+label.warning::after { border-color: $color-warning !important }
+:checked + label.warning::after { background-color: $color-warning !important }
+
+.error { color: $color-error }
+.error::placeholder { color: $color-error }
+label.error { color: $color-error !important }
+label.error::after { border-color: $color-error !important }
+:checked + label.error::after { background-color: $color-error !important }
+
+.valid { color: $color-valid }
+.valid::placeholder { color: $color-valid }
+label.valid { color: $color-valid !important }
+label.valid::after { border-color: $color-valid !important }
+:checked + label.valid::after { background-color: $color-valid !important }

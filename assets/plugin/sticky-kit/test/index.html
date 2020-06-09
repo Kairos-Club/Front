@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sticky kit test</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src="../dist/sticky-kit.js"></script>
+</head>
+<body>
+
+
+<h1>Basic Stick</h1>
+<div class="sticky_container">
+  <div class="sticky_column" style="height: 600px">
+    <img src="http://bigwax.fr/files/.thumbs/products/i_m_a_cliche/800x/cliche058_kusuma_gong3000.jpg"
+         style="width: 100%" />
+
+    <img src="http://bigwax.fr/files/.thumbs/products/i_m_a_cliche/800x/cliche058_kusuma_gong3000.jpg"
+         style="width: 100%" />
+
+  </div>
+  <div class="sticky_column" style="height: 900px"></div>
+  <div class="sticky_column" style="height: 600px"></div>
+</div>
+
+
+<div class="full"></div>
+
+<script type="text/javascript">
+
+  // Sticky-Kit
+  $(".sticky_column").stick_in_parent({
+    offset_top: 0,
+    parent: ".sticky_container"
+  });
+
+</script>
+
+</body>
+</html>

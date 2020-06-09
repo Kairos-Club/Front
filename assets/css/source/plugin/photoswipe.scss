@@ -1,0 +1,147 @@
+
+/* Config Batch
+-------------------------------------------------- */
+@import '../config/config';
+
+/*! Photoswipe
+-------------------------------------------------- */
+
+.bw-gallery {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.bw-gallery img {
+  width: 100%;
+  height: auto;
+}
+.bw-gallery figure {
+  display: inline-block;
+  margin: 0 0 $door-size 0;
+}
+.bw-gallery figcaption {
+  display: none;
+}
+
+.pswp__top-bar {
+  background-color: transparent;
+}
+
+.pswp__top-bar,
+.pswp__caption {
+  background-color: transparent !important;
+}
+
+.pswp__caption,
+.pswp__counter,
+.pswp__button--zoom,
+.pswp__button--share,
+.pswp__button--fs{
+  display: none;
+  visibility: hidden;
+}
+
+.pswp__bg {
+
+  background: $color-two;
+
+  background: -moz-linear-gradient(45deg,  rgba(102,102,255,0.7) 0%, rgba(104,103,254,0.7) 1%, rgba(224,200,207,1) 80%, rgba(255,225,195,1) 100%);
+  background: -webkit-linear-gradient(45deg,  rgba(102,102,255,0.7) 0%,rgba(104,103,254,0.7) 1%,rgba(224,200,207,1) 80%,rgba(255,225,195,1) 100%);
+  background: linear-gradient(45deg,  rgba(102,102,255,0.7) 0%,rgba(104,103,254,0.7) 1%,rgba(224,200,207,1) 80%,rgba(255,225,195,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b36666ff', endColorstr='#ffe1c3',GradientType=1 );
+
+}
+
+/*
+.pswp__container {
+  cursor: zoom-out !important;
+  cursor: -webkit-zoom-out !important;
+}
+*/
+
+img.pswp__img {
+  //border: $door-size transparent solid;
+  //padding: $door-size;
+}
+
+.pswp__button--arrow--left:before,
+.pswp__button--arrow--right:before {
+  top: 0;
+  left: 0;
+  right: 0;
+  background: none;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  background: none !important;
+  background-color: transparent !important;
+
+  button {
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+}
+
+.pswp button {
+  width: $door-size*4;
+  padding: $door-size + $door-padding/2;
+}
+
+.pswp button:hover {
+  width: $door-size*4;
+
+}
+
+.pswp__button,
+.pswp__button:active {
+  opacity: 1;
+}
+
+.pswp__top-bar{
+  height: 0;
+}
+
+.pswp__button--close {
+
+  width: $door-size*4 !important;
+  height: $door-size*4 !important;
+
+  background: none !important;
+  background-color: transparent !important;
+
+  padding: 0;
+  margin: 0;
+
+  i {
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    background-color: transparent;
+
+    width: $door-size*4 !important;
+    height: $door-size*4 !important;
+
+    //@include border-radius(100px);
+    overflow: hidden;
+
+    font-size: 48px;
+    line-height: $door-size*4;
+
+    pointer-events: none;
+
+    padding: 0;
+    margin: 0;
+
+  }
+
+  &:hover i {
+    background-color: $color-one;
+  }
+}

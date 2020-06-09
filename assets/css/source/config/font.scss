@@ -1,0 +1,74 @@
+/*
+-------------------------------------------------- */
+@font-face {
+  font-family: Inter;
+  src: url('../font/Inter-vf.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html, * {
+  font-family: 'Inter', sans-serif;
+  //font-variation-settings: 'wght' 100;
+
+  // LIGHT
+  //font-variation-settings: 'wght' 300;
+
+  // REGULAR
+  font-variation-settings: 'wght' 400;
+
+  // BOLD
+  //font-variation-settings: 'wght' 700;
+
+  transition: font-variation-settings .1s ease-in-out;
+
+  //animation: fontvariable 1s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite alternate both;
+}
+
+
+@keyframes fontvariable {
+  0% { font-variation-settings: 'wght' 100  }
+  100% { font-variation-settings: 'wght' 900 }
+}
+
+* {
+  //font-variation-settings: 'wght' 400;
+}
+*:hover {
+  //font-variation-settings: 'wght' 700;
+}
+
+/*
+-------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  //font-weight: lighter;
+  font-weight: normal;
+  font-variation-settings: 'wght' 700;
+}
+
+b, strong {
+  font-weight: normal;
+  font-variation-settings: 'wght' 700;
+}
+
+//label,
+legend,
+thead {
+  font-weight: normal;
+  font-variation-settings: 'wght' 700;
+}
+
+blockquote,
+tfoot {
+  font-style: italic;
+}
+
+/*
+-------------------------------------------------- */
+code, kbd, samp, pre, tt, var {
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+

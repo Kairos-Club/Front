@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG line drawing | anime.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="anime.js"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: #5E5E5E;
+        }
+        .anim, .anim svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .anim path {
+            stroke-width: 10;
+        }
+
+        .el {
+            width: 1000px;
+            height: 1000px;
+            background-color:transparent;
+
+            position: fixed;
+        }
+
+        .b-01 img {
+            -webkit-transform: rotateY(180deg); /* Safari */
+        }
+        .b-02 img { transform: rotate(3805deg) }
+        .b-03 img { transform: rotate(-25deg) }
+        .b-04 img { transform: rotate(310deg) }
+
+
+        .b-01 {
+            top: -25%;
+            left: -25%;
+        }
+
+
+        .b-02 {
+            bottom: -25%;
+            right: -25%;
+        }
+
+        .b-03 {
+            top: -25%;
+            right: -25%;
+        }
+
+        .b-04 {
+            bottom: -25%;
+            left: -25%;
+        }
+
+        .b-05 {
+            top: 50%;
+            left: 50%;
+
+            margin-top: -500px;
+            margin-left: -500px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="anim">
+
+    <div class="el b-01">
+        <img src="courbe-01.svg">
+    </div>
+
+    <div class="bb-2">
+        <div class="el b-02">
+            <img src="courbe-01.svg">
+        </div>
+    </div>
+
+    <div class="el b-03">
+        <img src="courbe-01.svg">
+    </div>
+
+    <div class="el b-04">
+        <img src="courbe-01.svg">
+    </div>
+
+    <div class="el b-05">
+        <img src="courbe-01.svg">
+    </div>
+
+</div>
+<script>
+
+    var unitlessValue = anime({
+        targets: '.el',
+        rotate: 360,
+        duration: 5000,
+        loop: true,
+        direction: 'alternate',
+        elasticity: 0,
+        autoplay: true
+    });
+
+</script>
+</body>
+</html>

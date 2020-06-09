@@ -1,0 +1,19 @@
+
+/* DOOR SIZE */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$door-size: 20px; // Baseline
+$doorframe-size: 1px; // Underline (hr, a, u)
+
+/* Door padding auto sizing */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$door-padding: ($door-size / 2);
+@function baseline($size) {
+  @return str-slice('#{$size}', 0)
+}
+
+/* Panel width */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+$panel-size: 500px;
+//$panel-size: 450px;

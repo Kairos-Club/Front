@@ -1,0 +1,310 @@
+/* UI Timing */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+$high-speed: 100ms;
+$speed: 200ms;
+$slow: 400ms;
+$high-slow: 1000ms;
+
+/* User connected animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.user-connected {
+  .icon-user:before {
+    animation: connected 3s infinite ease-in-out;
+  }
+}
+
+@keyframes connected {
+  50% { opacity: 0.5  }
+}
+
+/* Cart empty animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.no-shop-animation {
+  animation: bg-pan 2s cubic-bezier(0.645, 0.045, 0.355, 1.000) .5s infinite alternate both;
+}
+
+@keyframes bg-pan {
+  0% { background-position: 50% 100%  }
+  100% { background-position: 50% 0  }
+}
+
+/* No favorite animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.no-favorite-animation .ico-empty {
+  animation: ico-empty-move 20s infinite cubic-bezier(0.125, 0, 0.410, 0);
+  animation-direction: reverse;
+}
+
+@keyframes ico-empty-move {
+  0% { opacity: 0  }
+  20% { opacity: 1  }
+  60% { opacity: 1  }
+  100% { opacity: 0; transform: translate3d(0, 0, -1000px)  }
+}
+
+@for $i from 1 through 20 {
+  .ico-empty:nth-child(#{$i}) {
+    $size: random(20)+px;
+    height: $size;
+    width: $size;
+    animation-delay: -$i * .9s;
+    transform: translate3d((random(2500) * 1px), (random(2500) * 1px), (random(2500) * 1px));
+  }
+}
+
+/* Added in Cart */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.cart-taken,
+.cart-taken-1 {
+  animation: tchaTchin $slow ease-in-out;
+}
+
+.cart-taken-2 { animation: tchaTchin2 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-3 { animation: tchaTchin3 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-4 { animation: tchaTchin4 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-5 { animation: tchaTchin5 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-6 { animation: tchaTchin6 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-7 { animation: tchaTchin7 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-8 { animation: tchaTchin8 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-9 { animation: tchaTchin9 $slow ease-in-out; animation-iteration-count: 1 }
+.cart-taken-10 { animation: tchaTchin10 $slow ease-in-out; animation-iteration-count: 1 }
+
+@keyframes tchaTchin { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin2 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin3 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin4 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin5 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin6 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin7 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin8 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin9 { 50% { transform: scale(0.5)  } }
+@keyframes tchaTchin10 { 50% { transform: scale(0.5)  } }
+
+
+/* Added in Wishlist */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.wishlist-taken {
+  animation: tchaLove $slow ease-in-out;
+}
+
+@keyframes tchaLove {
+  50% { transform: scale(1.5)  }
+}
+
+/* Premium landing button animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+.premium-content {
+  .landing-button {
+    img {
+      transition: all $speed;
+    }
+    &:hover {
+      img {
+        animation: opacity $slow ease-out infinite;
+      }
+    }
+    @media (max-width: 568px) {
+      img {
+        animation: opacity $slow ease-out infinite;
+      }
+    }
+  }
+
+  .price-simulator-title {
+    animation: opacity $slow ease-out infinite;
+  }
+
+  @keyframes opacity {
+    50% { opacity: 0.7  }
+  }
+}
+
+/* Scroll down indicator animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.down-indicator,
+.down-indicator-next {
+
+  img {
+    animation: downplay 4s ease-in-out infinite;
+    transition: all $speed;
+  }
+
+  @-webkit-keyframes downplay {
+    50% { transform: translateY($door-size)  }
+  }
+}
+
+/* UI Animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+button.disabled,
+a.disabled {
+  .material-icons {
+    animation: added $slow ease-in-out;
+  }
+}
+
+@keyframes added {
+  0% { width: 0; transform: scale(0)  }
+  70% { width: 0; transform: scale(0)  }
+  80% { width: 24px; transform: scale(0)  }
+  100% { width: 24px; transform: scale(1)  }
+}
+
+.brand {
+  img, .svg {
+    transition: height $speed;
+  }
+}
+
+.button-hard {
+  transition: padding $speed;
+}
+
+.button-quick-view,
+.button-quick-view:before,
+.button-quick-view:after {
+  transition: all $high-speed;
+}
+
+label:after,
+.menu a,
+.submenu a {
+  transition: all $high-speed;
+}
+
+a .item-is-brand,
+a .item-is-product,
+a .item-is-event,
+a .item-is-artist {
+  transition: all $high-speed;
+}
+
+.discovering-demo {
+  transition: all $slow;
+
+}
+
+//.premium-content table,
+.global-link,
+.global-link i {
+  transition: all $speed;
+  transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+::placeholder {
+  transition: all $high-speed;
+}
+
+.menu,
+.submenu {
+  transition: padding $slow;
+}
+
+.brand {
+  transition: margin $slow;
+}
+
+/*.brand svg {
+  transition: width $slow, height $slow;
+}*/
+
+.payment-method label img {
+  transition: opacity $speed;
+}
+
+#sub-filter,
+#sub-search {
+  transition: all $speed;
+}
+
+.product-bunndle a .product-bunndle-item-link {
+  transition: all $high-speed;
+}
+
+.global-launche-content {
+  transition: all $speed;
+}
+
+/* PLUGIN Animation */
+/* - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Flickity
+-------------------------------------------------- */
+
+.flickity-viewport {
+  //transition: height $speed;
+}
+
+/* ---- previous/next buttons ---- */
+.flickity-prev-next-button {
+  transition: width $high-speed, opacity $high-speed;
+}
+
+/* Photoswipe
+-------------------------------------------------- */
+
+/* ---- previous/next buttons ---- */
+.pswp__button--arrow--left,
+.pswp__button--arrow--right,
+.pswp__button--close i {
+  transition: all $high-speed !important;
+}
+
+/* ---- Zoom / Fade ---- */
+.pswp__zoom-wrap {
+  transition: all $speed;
+}
+
+.pswp__bg {
+  transition: opacity $speed;
+}
+
+/* Magnific Popup
+-------------------------------------------------- */
+
+.panel-bottom {
+  transition: all $speed;
+}
+
+.mfp-preloader {
+  animation: preload-fun 1s;
+}
+
+@keyframes preload-fun {
+  0% { opacity: 0  }
+  50% { opacity: 0  }
+  100% { opacity: 1  }
+}
+
+/* Overlay (background) */
+.global-ajax-view.mfp-bg,
+.panel-quick-view.mfp-bg {
+  transition: all $speed;
+}
+
+/* Content */
+.global-ajax-view.mfp-wrap .mfp-content {
+  transition: all $speed;
+}
+
+/* Content */
+.panel-quick-view.mfp-wrap .mfp-content {
+  transition: all $speed;
+}
+
+/* Close button */
+.mfp-close {
+  transition: all $speed;
+}
+
+.mfp-close:before {
+  transition: all $high-speed;
+}
