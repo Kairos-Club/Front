@@ -14,8 +14,15 @@ html {
 
 /* z-index
 -------------------------------------------------- */
-.medium-zoom-overlay, .medium-zoom-image { z-index: 999 }
-.switch { z-index: 99 }
+.medium-zoom-image--opened { z-index: 999 }
+
+.site-icone { z-index: 99 }
+
+.medium-zoom-overlay { z-index: 9 }
+
+.switch { z-index: 5 }
+
+.page-content { z-index: 1 }
 
 
 /* GLOBAL
@@ -79,7 +86,11 @@ article {
 -------------------------------------------------- */
 
 .medium-zoom-overlay {
-  //background-color: $color-one !important;
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    backdrop-filter: blur(30px);
+  }
+
 }
 
 .medium-zoom-image {
@@ -165,19 +176,28 @@ article {
     }
   }
 
+
+
   .sw-list {
     //transition: opacity .1s ease-in, backdrop-filter .1s ease-in;
     padding: ($door-padding + $door-padding/2) $door-size;
-
-    //background-color: rgba(230, 230, 230, 0.6);
-    background-color: $color-one-50;
-    backdrop-filter: blur(60px);
 
     opacity: 0;
     transform: translateX(-150%);
 
     overflow: auto;
     max-height: 100%;
+
+    /* BACKGROUND BLUR ACK !! --------------------------------------- */
+
+    background-color: $color-default;
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      backdrop-filter: blur(60px);
+      background-color: $color-one-50;
+    }
+
+    /* BACKGROUND BLUR ACK !! --------------------------------------- */
 
     &:hover {
       z-index: 2;
