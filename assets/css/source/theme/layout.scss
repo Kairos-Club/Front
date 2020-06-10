@@ -39,36 +39,31 @@ p a:hover {
 }
 
 .page-content {
-  padding: ($door-size + $door-padding) $door-size $door-size $door-size*4;
+  padding: ($door-size + $door-padding) $door-size $door-size*3 $door-size*4;
 }
 
-article {
-  p {
-    max-width: 600px;
-  }
 
-  figure {
-    display: inline-block;
-    max-width: 200px;
-    padding: $door-padding;
+p {
+  max-width: 600px;
+}
 
-    img {
-      //border-radius: $door-padding/2;
-      overflow: hidden;
-      max-height: 200px;
-    }
-  }
+figure {
+  display: inline-block;
+  max-width: 200px;
+  padding: $door-padding;
 
-  figcaption {
-    text-align: center;
-    font-size: small;
-    margin-top: $door-padding;
-    margin-bottom: $door-padding;
+  img {
+    //border-radius: $door-padding/2;
+    overflow: hidden;
+    max-height: 200px;
   }
 }
 
-.post-content {
-  //display: flex;
+figcaption {
+  text-align: center;
+  font-size: small;
+  margin-top: $door-padding;
+  margin-bottom: $door-padding;
 }
 
 .flex-gallery {
@@ -76,7 +71,7 @@ article {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: $door-size*2;
+  margin-bottom: $door-padding;
   margin-top: -$door-padding;
   margin-left: -$door-padding;
   margin-right: -$door-padding;
