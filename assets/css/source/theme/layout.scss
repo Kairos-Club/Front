@@ -96,7 +96,12 @@ article {
 .medium-zoom-image {
   border-radius: $door-padding/2;
   overflow: hidden;
+
   filter: drop-shadow( 0 0 $door-padding/2 $color-default);
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    filter: drop-shadow( 0 0 0 transparent);
+  }
 }
 
 
