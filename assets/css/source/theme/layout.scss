@@ -87,6 +87,7 @@ article {
 
 .medium-zoom-overlay {
 
+  /* BACKGROUND BLUR --------------------------------------- */
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     backdrop-filter: blur(30px);
   }
@@ -97,8 +98,10 @@ article {
   border-radius: $door-padding/2;
   overflow: hidden;
 
+
   filter: drop-shadow( 0 0 $door-padding/2 $color-default);
 
+  /* IF BACKGROUND BLUR --------------------------------------- */
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     filter: drop-shadow( 0 0 0 transparent);
   }
@@ -110,24 +113,14 @@ article {
 -------------------------------------------------- */
 
 .site-icone {
-  //border-radius: $door-padding;
   padding: $door-size;
-
   position: fixed;
   top: 0;
   left: 0;
 
-  //background-color: rgba(230, 230, 230, 0.6);
-  //backdrop-filter: blur(60px);
-
-  //border-bottom: 1px solid $color-one;
-
-  //width: 100%;
-
   display: flex;
   align-items: center;
   text-decoration: none;
-
 
   .icone {
     display: inline-block;
@@ -193,16 +186,12 @@ article {
     overflow: auto;
     max-height: 100%;
 
-    /* BACKGROUND BLUR ACK !! --------------------------------------- */
-
+    /* BACKGROUND BLUR --------------------------------------- */
     background-color: $color-default;
-
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       backdrop-filter: blur(60px);
       background-color: $color-one-50;
     }
-
-    /* BACKGROUND BLUR ACK !! --------------------------------------- */
 
     &:hover {
       z-index: 2;
@@ -271,8 +260,6 @@ article {
     align-items: flex-start;
     //flex-wrap: wrap;
 
-    //margin-right: $door-size;
-
     margin-right: $door-size;
     margin-bottom: $door-size;
 
@@ -280,13 +267,8 @@ article {
 
     border-radius: $door-padding/2;
 
-    //border: 1px solid $color-one;
-
-    //color: $color-default;
-    //background-color: $color-one;
-
+    border: 1px solid $color-one-50;
     background-color: $color-one-50;
-    //backdrop-filter: blur(60px);
 
     // Important to keep block size
     overflow: hidden;
@@ -294,11 +276,6 @@ article {
     p {
       margin-bottom: 0;
     }
-
-    a {
-      //color: $color-default;
-    }
-
 
     .avatar {
 
@@ -319,8 +296,6 @@ article {
       }
     }
   }
-
-
 }
 
 /* Global Definition
@@ -349,63 +324,6 @@ svg path {
   width: 100%;
   height: 100%;
 }
-
-
-/* Flag
-SVG :) Need new flag ?
-go here --> http://www.phoca.cz/cssflags
--------------------------------------------------- */
-
-.flag-fr,
-.flag-en {
-  &:before {
-    display: inline-block;
-    content: " ";
-    overflow: hidden;
-    width: $door-size+$door-size/2;
-    height: $door-size;
-    vertical-align: bottom;
-    transform-origin: 0 50%;
-    transform: scale(.75);
-  }
-}
-
-.flag-fr:before {
-  background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj4NCjxwYXRoIGZpbGw9IiNlZDI5MzkiIGQ9Im0wLDBoOTAwdjYwMGgtOTAweiIvPg0KPHBhdGggZmlsbD0iI2ZmZiIgZD0ibTAsMGg2MDB2NjAwaC02MDB6Ii8+DQo8cGF0aCBmaWxsPSIjMDAyMzk1IiBkPSJtMCwwaDMwMHY2MDBoLTMwMHoiLz4NCjwvc3ZnPg0K');
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-.flag-en:before {
-  background:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNjAgMzAiIGhlaWdodD0iNjAwIj4NCjxkZWZzPg0KPGNsaXBQYXRoIGlkPSJ0Ij4NCjxwYXRoIGQ9Im0zMCwxNWgzMHYxNXp2MTVoLTMwemgtMzB2LTE1enYtMTVoMzB6Ii8+DQo8L2NsaXBQYXRoPg0KPC9kZWZzPg0KPHBhdGggZmlsbD0iIzAwMjQ3ZCIgZD0ibTAsMHYzMGg2MHYtMzB6Ii8+DQo8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iNiIgZD0ibTAsMGw2MCwzMG0wLTMwbC02MCwzMCIvPg0KPHBhdGggc3Ryb2tlPSIjY2YxNDJiIiBzdHJva2Utd2lkdGg9IjQiIGQ9Im0wLDBsNjAsMzBtMC0zMGwtNjAsMzAiIGNsaXAtcGF0aD0idXJsKCN0KSIvPg0KPHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEwIiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjxwYXRoIHN0cm9rZT0iI2NmMTQyYiIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJtMzAsMHYzMG0tMzAtMTVoNjAiLz4NCjwvc3ZnPg0K');
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-/* Bigwax Menu
--------------------------------------------------- */
-/* Menu Z-INDEX ---------- */
-
-.header-fix {   z-index: 4 }
-.header-gap {   z-index: 0 }
-
-.left, .right { z-index: 8;}
-.center {       z-index: 10 }
-
-.menu {         z-index: 6;
-  @media (max-width: 599px) {
-                z-index: 9
-} }
-
-.brand {        z-index: 5;}
-
-.submenu {    z-index: 7;
-  @media (max-width: 599px) {
-              z-index: 11
-} }
-
 
 
 /* Scrollbar (only for Webkit...)

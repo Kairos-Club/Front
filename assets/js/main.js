@@ -24,3 +24,6 @@ $(function() {
 	});
 });
 
+// Console
+// - - - - - - - - - - - - - - - - - - - - - - - -
+console.log("%cᕦ(ò_ó*)ᕤ\na website by Muraker\nwww.muraker.com", "font-size:15px");
