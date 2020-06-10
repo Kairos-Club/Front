@@ -8,12 +8,18 @@ html {
   cursor: default;
 
   //background: url(../../04.jpg) center center no-repeat fixed;
-  background-size: cover;
+  //background-size: cover;
   background-color: $color-default;
-  //background-color: #ececec;
-
 }
 
+/* z-index
+-------------------------------------------------- */
+.medium-zoom-overlay, .medium-zoom-image { z-index: 999 }
+.switch { z-index: 99 }
+
+
+/* GLOBAL
+-------------------------------------------------- */
 p a {
   text-decoration: underline;
   // REGULAR
@@ -72,15 +78,17 @@ article {
 /* Medium Zoom
 -------------------------------------------------- */
 
+.medium-zoom-overlay {
+  //background-color: $color-one !important;
+}
+
 .medium-zoom-image {
   border-radius: $door-padding/2;
   overflow: hidden;
   filter: drop-shadow( 0 0 $door-padding/2 $color-default);
 }
 
-.medium-zoom-overlay {
-  //background-color: $color-one !important;
-}
+
 
 /* Site Icone
 -------------------------------------------------- */
