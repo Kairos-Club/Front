@@ -2,7 +2,7 @@
 // Medium Zoom
 // - - - - - - - - - - - - - - - - - - - - - - - -
 mediumZoom('.zoomable', {
-	margin: 20,
+	margin: 10,
 	background: 'transparent',
 	scrollOffset: 0
 });
