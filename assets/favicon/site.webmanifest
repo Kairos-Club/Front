@@ -1,14 +1,14 @@
 {
-    "name": "Squeezer",
-    "short_name": "Squeezer",
+    "name": "Front",
+    "short_name": "Front",
     "icons": [
         {
-            "src": "/theme/fav/android-chrome-192x192.png?v=OmJLAGOj4d",
+            "src": "/assets/favicon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/theme/fav/android-chrome-512x512.png?v=OmJLAGOj4d",
+            "src": "/assets/favicon/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

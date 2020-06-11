@@ -233,18 +233,25 @@ figcaption {
 -------------------------------------------------- */
 .organigramme {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
+  justify-content: flex-start;
+  //align-content: stretch;
   flex-wrap: wrap;
 
-  .persona {
-    display: flex;
-    align-items: flex-start;
+  margin-top: -$door-padding/4;
+  margin-right: -$door-padding/4;
+  margin-bottom: $door-size;
+  margin-left: -$door-padding/4;
 
-    margin-right: $door-size;
-    margin-bottom: $door-size;
-    padding: $door-padding;
+  .structure, .persona {
+    display: flex;
+    align-items: center;
+
+    margin: $door-padding/4;
+
+    padding: $door-padding $door-size $door-padding $door-padding;
     border-radius: $door-padding/2;
-    border: 1px solid $color-one-50;
+    //border: 1px solid $color-one-50;
     background-color: $color-one-50;
 
     // Important to keep block size
@@ -255,18 +262,41 @@ figcaption {
     }
 
     .avatar {
+      min-width: $door-size*3;
+      min-height: $door-size*3;
+      width: $door-size*3;
+      height: $door-size*3;
+      margin-right: $door-padding;
+
+      overflow: hidden;
+
+      border-radius: 100%;
+      border: $door-padding/2 solid $color-one-50;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .structure {
+    width: 100%;
+    background-color: transparent;
+    //padding: $door-padding 0 $door-padding 0;
+
+    align-items: center;
+
+    padding-left: $door-size;
+
+    .avatar {
       min-width: $door-size*2;
       min-height: $door-size*2;
       width: $door-size*2;
       height: $door-size*2;
-      background-color: $color-one;
-      margin-right: $door-padding;
-      border-radius: 100%;
 
-      img {
-        width: $door-size*2;
-        height: $door-size*2;
-      }
+      border-radius: $door-padding/2;
+      border: $door-padding/2 solid $color-one-50;
     }
   }
 }
