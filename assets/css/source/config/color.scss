@@ -44,7 +44,7 @@ input[type="reset"],
 input[type="button"],
 .inputfile + label {
   color: $color-one;
-  background-color: $color-two;
+  background-color: $color-tree;
 }
 
 button:hover, .button:hover,
@@ -86,7 +86,7 @@ input[type="button"]:hover, input[type="button"]:focus,
 input,
 textarea,
 select {
-  color: $color-default;
+  color: $color-one;
   background-color: $color-two;
   border-color: $color-two !important; // !important to reset all browser border color
 }
@@ -94,7 +94,7 @@ select {
 input:hover,
 textarea:hover,
 select:hover {
-  color: $color-default;
+  color: $color-one;
   background-color: $color-tree;
   border-color: $color-two !important;
 }
@@ -102,7 +102,7 @@ select:hover {
 input:focus,
 textarea:focus,
 select:focus {
-  color: $color-default;
+  color: $color-one;
   background-color: $color-tree;
   border-color: $color-two !important;
 }
@@ -116,7 +116,7 @@ select:checked,
 optgroup,
 optgroup:disabled option,
 option:checked {
-  color: $color-default;
+  color: $color-one;
 }
 
 /* Input Placeholder Color
