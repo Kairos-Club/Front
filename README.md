@@ -1,9 +1,9 @@
 
 
-![Alt text](siteicon.png)
+![Alt text](assets/icone/front.svg)
 
-# Front V.0.1
-## A Front Doors Framework dedicated to Kairos Club projects
+# Front V.1.0
+## A Framework dedicated to Kairos Club projects
 
 https://front.kairosclub.fr
 
@@ -13,8 +13,6 @@ https://front.kairosclub.fr
 - Configuring (SCSS by element: desktop / mobil)
   - Space (padding, margin, line-height, etc.)
   - Color and tints
-  - Breakpoints
-  - Border radius
 
 ## 2. Sources
 
@@ -121,16 +119,5 @@ https://front.kairosclub.fr
 - Homepage
 - Article
 - Etc.
-
----
-
-      |─────|
-      |     |
-      |─── /|
-      |  /  |
-      |/────|
-    Front Doors
-    
----
 
 **NEXT STEP : The Back Doors :)**
