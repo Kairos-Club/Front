@@ -1,27 +1,27 @@
-/*! IMPORTS (Font) */
+/* IMPORTS (Font) */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
-@import 'imports';
+//@import 'imports';
 
-/*! BASE */
+/* BASE */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
 @import '../source/base/reset';
 
-/*! CONFIG */
+/* CONFIG */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
-@import '../source/config/utility';
+//@import '../source/config/utility';
 @import '../source/config/font';
 @import '../source/config/space';
 @import '../source/config/color';
-@import '../source/config/img';
-@import '../source/config/radius';
-@import '../source/config/animation';
+//@import '../source/config/img';
+//@import '../source/config/radius';
+//@import '../source/config/animation';
 
 /* DEV */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
 //@import '../source/config/dev';
 
-/*! THEME + ICONE */
+/* THEME + ICONE */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
-@import '../source/theme/icone';
+//@import '../source/theme/icone';
 @import '../source/theme/layout';
 
