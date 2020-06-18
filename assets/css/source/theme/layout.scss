@@ -192,6 +192,15 @@ figcaption {
   }
 }
 
+/* Site Icone + switch
+-------------------------------------------------- */
+.site-icone, .switch .sw-open {
+  .icone {
+    border: $doorframe-size solid $color-one-50;
+    background-color: $color-one-50;
+  }
+}
+
 
 /* Flex Gallery
 -------------------------------------------------- */
