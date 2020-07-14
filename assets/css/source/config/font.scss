@@ -45,6 +45,12 @@ b, strong {
   font-variation-settings: 'wght' 700;
 }
 
+b i, i b,
+strong i, i strong {
+  // BOLD
+  font-variation-settings: 'wght' 700;
+}
+
 label,
 legend,
 thead {

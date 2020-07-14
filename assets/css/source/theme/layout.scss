@@ -3,10 +3,19 @@
 -------------------------------------------------- */
 @import '../config/config';
 
+
+
+$picnic-transition: all .15s ease-in-out;
+
+
+
 html {
   cursor: default;
-  color: $color-one;
-  background-color: $color-default;
+}
+
+:root {
+  --fa-primary-color: $font-color;
+  --fa-secondary-color: lighten($font-color, 40%);
 }
 
 
@@ -135,12 +144,7 @@ figcaption {
     overflow: auto;
     max-height: 100%;
 
-    /* BACKGROUND BLUR --------------------------------------- */
-    background-color: $color-default;
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      backdrop-filter: blur(60px);
-      background-color: $color-one-50;
-    }
+    @include background-box();
 
     &:hover {
       z-index: 2;
@@ -196,8 +200,8 @@ figcaption {
 -------------------------------------------------- */
 .site-icone, .switch .sw-open {
   .icone {
-    border: $doorframe-size solid $color-one-50;
-    background-color: $color-one-50;
+    border: $doorframe-size solid $font-background-color;
+    background-color: $font-background-color;
   }
 }
 
@@ -219,22 +223,12 @@ figcaption {
 /* Medium Zoom
 -------------------------------------------------- */
 .medium-zoom-overlay {
-  /* BACKGROUND BLUR --------------------------------------- */
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    backdrop-filter: blur(30px);
-  }
+  @include background-overlay();
 }
 
 .medium-zoom-image {
   border-radius: $door-padding/2;
   overflow: hidden;
-
-  filter: drop-shadow( 0 0 $door-padding/2 $color-default);
-
-  /* IF BACKGROUND BLUR --------------------------------------- */
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    filter: drop-shadow( 0 0 0 transparent);
-  }
 }
 
 
@@ -260,8 +254,8 @@ figcaption {
 
     padding: $door-padding $door-size $door-padding $door-padding;
     border-radius: $door-padding/2;
-    //border: 1px solid $color-one-50;
-    background-color: $color-one-50;
+    //border: 1px solid $font-background-color;
+    background-color: $font-background-color;
 
     // Important to keep block size
     overflow: hidden;
@@ -280,7 +274,7 @@ figcaption {
       overflow: hidden;
 
       border-radius: 100%;
-      border: $door-padding/2 solid $color-one-50;
+      border: $door-padding/2 solid $font-background-color;
 
       img {
         width: 100%;
@@ -304,7 +298,7 @@ figcaption {
       height: $door-size*2;
 
       border-radius: $door-padding/2;
-      border: $door-padding/2 solid $color-one-50;
+      border: $door-padding/2 solid $font-background-color;
     }
   }
 }
@@ -337,3 +331,124 @@ svg path {
   width: 100%;
   height: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+  //text-align: center;
+
+  // This is the elemet that allows for show/hide without requiring javascript
+  > input {
+
+    // The input is only for functionality, so hide it
+    display: none;
+
+    ~ * {
+
+      // By default, they are not visible
+      opacity: 0;
+
+      // Also hide it from any iteraction
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
+
+  .overlay {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    margin: 0;
+    border-radius: 0;
+    transition: $picnic-transition;
+    z-index: 100000;
+
+    //@include background-overlay();
+
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    // All of the elements that follow the overlay (the modals)
+    ~ * {
+
+      border-radius: $door-padding/2;
+      //background-color: $font-background-color;
+      padding: $door-padding;
+      //width: 100%;
+      max-width: 800px;
+      min-width: 320px;
+
+      max-height: 100%;
+
+      border: 0;
+
+
+
+      @include background-box();
+
+      // Position it in the middle of the screen on top of everything
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%) scale(.95, .95);
+      z-index: 1000000;
+
+      // Hiding effect
+      transition: $picnic-transition;
+
+      .close {
+        //background-color: red;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: $door-size*2;
+        height: $door-size*2;
+
+        line-height: $door-size*2;
+        text-align: center;
+      }
+    }
+  }
+
+  // When the checkbox is checked (modal should be showing)
+  > input:checked {
+
+    // All the visible elements
+    ~ * {
+      display: block;
+      opacity: 1;
+      max-height: 10000px;
+      transition: $picnic-transition;
+    }
+
+    // This position is only for the modal, not for the overlay
+    // It says: grab everything that is after the overlay after the input
+    ~ .overlay ~ * {
+      max-height: 100%;
+      overflow: auto;
+      transform: translateX(-50%) translateY(-50%) scale(1, 1);
+    }
+  }
+}
+

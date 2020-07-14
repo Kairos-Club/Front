@@ -6,7 +6,7 @@
 /* Global
 -------------------------------------------------- */
 code, kbd, samp, pre, tt, var, mark, abbr {
-  //@include border-radius(2px)
+  @include border-radius(3px)
 }
 
 /* Buttons
@@ -16,11 +16,11 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"],
 .inputfile + label {
-  //@include border-radius(2px);
+  @include border-radius(3px);
 }
 
 /* Input
 -------------------------------------------------- */
 input, textarea, select {
-  //@include border-radius(2px);
+  @include border-radius(3px);
 }

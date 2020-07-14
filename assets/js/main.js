@@ -24,6 +24,16 @@ $(function() {
 	});
 });
 
+
+// Modal ESC close
+// - - - - - - - - - - - - - - - - - - - - - - - -
+document.onkeydown = function(e){
+	if (e.keyCode == 27) {
+		var mods = document.querySelectorAll('.modal > [type=checkbox]');
+		[].forEach.call(mods, function(mod){ mod.checked = false; });
+	}
+}
+
 // Console
 // - - - - - - - - - - - - - - - - - - - - - - - -
 console.log("%cᕦ(ò_ó*)ᕤ\na website by Muraker\nwww.muraker.com", "font-size:15px");

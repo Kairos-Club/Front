@@ -133,8 +133,9 @@ input[type="button"] {
   white-space: nowrap;
   width: auto;
   max-width: inherit;
-  padding: $door-padding;
-  border: none;
+
+  padding: $door-padding - $doorframe-size;
+  border: $doorframe-size solid;
 
   box-shadow: none;
   -moz-box-shadow: none;

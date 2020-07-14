@@ -5,8 +5,6 @@
 # Front V.1.0
 ## A Framework dedicated to Kairos Club projects
 
-https://front.kairosclub.fr
-
 ## 1. Config
 
 - Reset (Normalize)
@@ -40,6 +38,12 @@ https://front.kairosclub.fr
   - OL
 
 ### Buttons
+
+  - `a` element
+  - `button` element
+  - Input type `submit`
+  - Input type `button`
+  
 
 ### Images
   - Logo

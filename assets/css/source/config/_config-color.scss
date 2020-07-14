@@ -2,20 +2,41 @@
 /* UI Colors */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */
 
-$color-default: #FFFFFF;
-.color-default { color: $color-default }
+/* Background */
+$background-color: #FFF;
 
-$color-one: #0000FF;
-.color-one { color: $color-one }
+/* Font */
+$font-color: #00F;
+$font-background-color: lighten($font-color, 40%);
 
-$color-one-50: rgba(0, 0, 255, 0.20);
-.color-one-50 { color: $color-one-50 }
+/* Background Overlay */
+$background-overlay: rgba($font-background-color, 0.5);
 
-$color-two: #EFEFEF;
-.color-two { color: $color-two }
+/* Background Overlay
+-------------------------------------------------- */
+/* @include background-box();
+- - - - - - - - - - - - - - - - - - - - - - - - - - */
+@mixin background-box() {
+ background-color: $background-color;
+ border: $doorframe-size solid $font-background-color;
+ margin: -$doorframe-size;
+ @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  backdrop-filter: blur(60px);
+  background-color: $background-overlay;
+  border:none;
+  margin: unset;
+ }
+}
 
-$color-tree: #FFFFFF;
-.color-tree { color: $color-tree }
+/* @include background-overlay();
+- - - - - - - - - - - - - - - - - - - - - - - - - - */
+@mixin background-overlay() {
+ background-color: transparent !important;
+ @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  backdrop-filter: blur(60px);
+ }
+}
+
 
 /* Shop Colors */
 /* - - - - - - - - - - - - - - - - - - - - - - - - */

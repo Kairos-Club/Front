@@ -24,6 +24,25 @@ body, html {
   background-color: transparent;
 }
 
+*:hover {
+
+  &::before {
+    position: absolute;
+    //content: attr(class);
+
+    font-size: 10px;
+    line-height: 20px;
+
+    padding: 0 7px;
+    border-radius: 10px;
+
+    color: black;
+    background-color: $color-error;
+
+    z-index: 99999;
+  }
+}
+
 .fd-dev {
   pointer-events: none;
   display: inline-block;

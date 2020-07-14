@@ -196,7 +196,7 @@
 		"ec": 1,
 		"ft": 4,
 		"ma": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/css/source/config/radius.css",
 		"oF": 0,
 		"oS": 0,
@@ -214,6 +214,16 @@
 		"oF": 0,
 		"oS": 0,
 		"sct": 0
+		},
+	"/assets/css/source/config/utility.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/source/config/utility-min.css",
+		"oF": 0,
+		"oS": 3
 		},
 	"/assets/css/source/config/utility.scss": {
 		"aP": 0,
@@ -678,6 +688,17 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/content/accueil-01-07-2020.jpg": {
+		"ft": 16384,
+		"iS": 4502249,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/accueil-01-07-2020.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
 		},
 	"/content/art-of-fighting/01.jpg": {
 		"ft": 16384,
