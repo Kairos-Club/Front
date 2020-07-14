@@ -37,12 +37,16 @@
 </div>
 
 <main class="page-content">
-    <p>Password</p>
+
+    <p>🔒 Password</p>
     <form action="" method="post" class="{{messageClasses}}">
-        <div class="incorrect-login-message">
-            Incorrect password.
+        <div class="incorrect-login-message form-message error">
+            <p>
+                <strong>Erreur</strong> - Mot de passe incorrect ¯\_(ツ)_/¯
+            </p>
         </div>
-        <input id="password" type="password" name="password" autofocus>
+
+        <p><input id="password" type="password" name="password" autofocus></p>
         <input type="hidden" name="username" value="user">
         <input type="submit" value="Log in">
     </form>
