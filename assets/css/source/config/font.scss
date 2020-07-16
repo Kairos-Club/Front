@@ -19,9 +19,33 @@ body, html, * {
   // BOLD
   //font-variation-settings: 'wght' 700;
 
+  //animation: fontvariable 1s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite alternate both;
+}
+
+p * {
+  transition: font-variation-settings .1s ease-in-out;
+}
+
+
+/* Links, Buttons
+-------------------------------------------------- */
+a *,
+button *,
+.button *,
+:link,
+:visited,
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+
   transition: font-variation-settings .1s ease-in-out;
 
-  //animation: fontvariable 1s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite alternate both;
+  &:hover {
+    // BOLD
+    font-variation-settings: 'wght' 700;
+  }
 }
 
 @keyframes fontvariable {

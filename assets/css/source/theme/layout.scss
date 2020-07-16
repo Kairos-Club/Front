@@ -57,24 +57,10 @@ form {
   max-width: 300px;
 }
 
-figure {
-  display: inline-block;
-  max-width: 200px;
-  padding: $door-padding;
-
-  img {
-    //border-radius: $door-padding/2;
-    overflow: hidden;
-    max-height: 200px;
-  }
+p img {
+  border-radius: $door-padding/2;
 }
 
-figcaption {
-  text-align: center;
-  font-size: small;
-  margin-top: $door-padding;
-  margin-bottom: $door-padding;
-}
 
 
 /* Site Icone
@@ -217,20 +203,19 @@ figcaption {
   margin-top: -$door-padding;
   margin-left: -$door-padding;
   margin-right: -$door-padding;
+
+  a {
+    display: inline-block;
+    max-width: 200px;
+    padding: $door-padding;
+
+    img {
+      //border-radius: $door-padding/2;
+      overflow: hidden;
+      max-height: 200px;
+    }
+  }
 }
-
-
-/* Medium Zoom
--------------------------------------------------- */
-.medium-zoom-overlay {
-  @include background-overlay();
-}
-
-.medium-zoom-image {
-  border-radius: $door-padding/2;
-  overflow: hidden;
-}
-
 
 /* Organigramme
 -------------------------------------------------- */
@@ -334,7 +319,224 @@ svg path {
 
 
 
+/* FancyBox 3
+-------------------------------------------------- */
+.fancybox-container {
+  z-index: 9;
+  color: $font-color;
+}
+
+.fancybox-bg {
+  //@include background-overlay();
+
+  background-color: $background-color;
+}
+
+.fancybox-is-open .fancybox-bg {
+  opacity: 1;
+}
+
+.fancybox-slide,
+.fancybox-slide--image {
+  padding: $door-size*4 $door-padding !important;
+}
+
+.fancybox-slide--image {
+  img {
+    border-radius: $door-padding/2;
+  }
+}
+
+
+/* Modal */
+
+#modal {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+
+  margin-bottom: 0 !important;
+  border-radius: $door-padding/2;
+
+  @include background-box();
+}
+
+#modal .fancybox-close-small {
+  top: $door-size;
+}
+
+#modal .content-header {
+  border-bottom: $doorframe-size solid $font-background-color;
+  padding: $door-size;
+}
+
+#modal .content-scroll {
+  //max-height: calc(100vh - 200px);
+  overflow: auto;
+  padding: $door-size $door-size 0;
+}
+
+
+/* Caption */
+
+.fancybox-caption {
+  background: linear-gradient(to top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0) 50%,
+          rgba(0, 0, 0, 0) 65%,
+          rgba(0, 0, 0, 0) 75.5%,
+          rgba(0, 0, 0, 0) 82.85%,
+          rgba(0, 0, 0, 0) 88%,
+          rgba(0, 0, 0, 0) 100%);
 
 
 
+  bottom: 0;
+  color: $font-color;
+  font-size: inherit;
+  font-weight: inherit;
+  left: 0;
+  line-height: $door-size;
+  padding: $door-size $door-size*4;
+  pointer-events: inherit;
+  right: 0;
+  text-align: center;
+  z-index: 99996;
+}
 
+
+.fancybox-caption--separate {
+  margin-top: -50px;
+}
+
+.fancybox-caption__body {
+  max-height: 50vh;
+  overflow: auto;
+  pointer-events: all;
+}
+
+.fancybox-caption a,
+.fancybox-caption a:link,
+.fancybox-caption a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.fancybox-caption a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+/* Toolbar */
+
+.fancybox-toolbar {
+  top: $door-size;
+  right: $door-size;
+}
+
+
+
+/* Buttons */
+
+.fancybox-button {
+
+  font-size: $door-size;
+  line-height: $door-size;
+
+  background: inherit;
+  border: none;
+  border-radius: $door-padding/2;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  height: $door-size*2;
+  margin: 0;
+  padding: $door-padding;
+  position: relative;
+  transition: color .2s;
+  vertical-align: middle;
+  visibility: inherit;
+  width: $door-size*2;
+}
+
+.fancybox-button,
+.fancybox-button:visited,
+.fancybox-button:link {
+  color: inherit;
+}
+
+.fancybox-button:hover {
+  color: inherit;
+}
+
+.fancybox-button:focus {
+  outline: none;
+}
+
+.fancybox-button.fancybox-focus {
+  outline: none;
+}
+
+.fancybox-button[disabled],
+.fancybox-button[disabled]:hover {
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+.fancybox-navigation .fancybox-button--arrow_right,
+.fancybox-navigation .fancybox-button--arrow_left {
+  font-size: $door-size;
+  line-height: $door-size;
+  height: $door-size*2;
+  width: $door-size*2;
+
+  padding: 0;
+
+  text-align: center;
+  div {
+    font-size: $door-size;
+    line-height: $door-size;
+
+    padding: $door-padding;
+  }
+}
+
+.fancybox-navigation .fancybox-button {
+  height: $door-size*2;
+  top: calc(100% - 60px);
+  width: $door-size*2;
+}
+
+
+.fancybox-navigation .fancybox-button--arrow_right {
+  margin-right: $door-size;
+  right: 0;
+}
+
+.fancybox-navigation .fancybox-button--arrow_left {
+  margin-left: $door-size;
+  left: 0;
+}
+
+
+
+.fancybox-progress {
+  background: $font-color;
+}
+
+/* Loading indicator */
+
+.fancybox-loading {
+  border: 2px solid $background-overlay;
+  border-bottom-color: $font-color;
+  height: $door-size;
+  left: 50%;
+  margin: -$door-padding 0 0 -$door-padding;
+  opacity: 1;
+  top: 50%;
+  width: $door-size;
+  z-index: 99999;
+}

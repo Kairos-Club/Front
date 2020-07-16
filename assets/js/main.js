@@ -1,38 +1,6 @@
 
-// Medium Zoom
-// - - - - - - - - - - - - - - - - - - - - - - - -
-mediumZoom('.zoomable', {
-	margin: 10,
-	background: 'transparent',
-	scrollOffset: 0
-});
-
-// Smooth Scroll
-// - - - - - - - - - - - - - - - - - - - - - - - -
-$(function() {
-	$('a[href*="#"]:not([href="#"])').click(function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-				$('html, body').animate({
-					scrollTop: target.offset().top
-				}, 300);
-				return false;
-			}
-		}
-	});
-});
 
 
-// Modal ESC close
-// - - - - - - - - - - - - - - - - - - - - - - - -
-document.onkeydown = function(e){
-	if (e.keyCode == 27) {
-		var mods = document.querySelectorAll('.modal > [type=checkbox]');
-		[].forEach.call(mods, function(mod){ mod.checked = false; });
-	}
-}
 
 // Console
 // - - - - - - - - - - - - - - - - - - - - - - - -
@@ -41,457 +9,349 @@ console.log("%cᕦ(ò_ó*)ᕤ\na website by Muraker\nwww.muraker.com", "font-siz
 
 
 
-// Modal V2
+// FancyBox V3
 // - - - - - - - - - - - - - - - - - - - - - - - -
 
-/* global NodeList, Element, Event, define */
-(function(global) {
-	'use strict';
 
-	var FOCUSABLE_ELEMENTS = [
-		'a[href]:not([tabindex^="-"]):not([inert])',
-		'area[href]:not([tabindex^="-"]):not([inert])',
-		'input:not([disabled]):not([inert])',
-		'select:not([disabled]):not([inert])',
-		'textarea:not([disabled]):not([inert])',
-		'button:not([disabled]):not([inert])',
-		'iframe:not([tabindex^="-"]):not([inert])',
-		'audio:not([tabindex^="-"]):not([inert])',
-		'video:not([tabindex^="-"]):not([inert])',
-		'[contenteditable]:not([tabindex^="-"]):not([inert])',
-		'[tabindex]:not([tabindex^="-"]):not([inert])'
-	];
-	var TAB_KEY = 9;
-	var ESCAPE_KEY = 27;
-	var focusedBeforeDialog;
+$('[data-fancybox]').fancybox({
 
-	/**
-	 * Define the constructor to instantiate a dialog
-	 *
-	 * @constructor
-	 * @param {Element} node
-	 * @param {(NodeList | Element | string)} targets
-	 */
-	function A11yDialog(node, targets) {
-		// Prebind the functions that will be bound in addEventListener and
-		// removeEventListener to avoid losing references
-		this._show = this.show.bind(this);
-		this._hide = this.hide.bind(this);
-		this._maintainFocus = this._maintainFocus.bind(this);
-		this._bindKeypress = this._bindKeypress.bind(this);
+		// Close existing modals
+		// Set this to false if you do not need to stack multiple instances
+		closeExisting: false,
 
-		// Keep a reference of the node and the actual dialog on the instance
-		this.container = node;
-		this.dialog = node.querySelector('dialog, [role="dialog"], [role="alertdialog"]');
-		this.role = this.dialog.getAttribute('role') || 'dialog';
-		this.useDialog = (
-			'show' in document.createElement('dialog') &&
-			this.dialog.nodeName === 'DIALOG'
-		);
+		// Enable infinite gallery navigation
+		loop: false,
 
-		// Keep an object of listener types mapped to callback functions
-		this._listeners = {};
+		// Horizontal space between slides
+		gutter: 0,
 
-		// Initialise everything needed for the dialog to work properly
-		this.create(targets);
-	}
+		// Enable keyboard navigation
+		keyboard: true,
 
-	/**
-	 * Set up everything necessary for the dialog to be functioning
-	 *
-	 * @param {(NodeList | Element | string)} targets
-	 * @return {this}
-	 */
-	A11yDialog.prototype.create = function(targets) {
-		// Keep a collection of nodes to disable/enable when toggling the dialog
-		this._targets =
-			this._targets || collect(targets) || getSiblings(this.container);
+		// Should allow caption to overlap the content
+		preventCaptionOverlap: true,
 
-		// Set the `shown` property to match the status from the DOM
-		this.shown = this.dialog.hasAttribute('open');
+		// Should display navigation arrows at the screen edges
+		arrows: true,
 
-		// Despite using a `<dialog>` element, `role="dialog"` is not necessarily
-		// implied by all screen-readers (yet)
-		// See: https://github.com/edenspiekermann/a11y-dialog/commit/6ba711a777aed0dbda0719a18a02f742098c64d9#commitcomment-28694166
-		this.dialog.setAttribute('role', this.role);
+		// Should display counter at the top left corner
+		infobar: false,
 
-		if (!this.useDialog) {
-			if (this.shown) {
-				this.container.removeAttribute('aria-hidden');
-			} else {
-				this.container.setAttribute('aria-hidden', true);
+		// Should display close button (using `btnTpl.smallBtn` template) over the content
+		// Can be true, false, "auto"
+		// If "auto" - will be automatically enabled for "html", "inline" or "ajax" items
+		smallBtn: "auto",
+
+		// Should display toolbar (buttons at the top)
+		// Can be true, false, "auto"
+		// If "auto" - will be automatically hidden if "smallBtn" is enabled
+		toolbar: "auto",
+
+		// What buttons should appear in the top right corner.
+		// Buttons will be created using templates from `btnTpl` option
+		// and they will be placed into toolbar (class="fancybox-toolbar"` element)
+		buttons: [
+			//"zoom",
+			//"share",
+			//"slideShow",
+			//"fullScreen",
+			//"download",
+			//"thumbs",
+			"close"
+		],
+
+		// Detect "idle" time in seconds
+		idleTime: 3,
+
+		// Disable right-click and use simple image protection for images
+		protect: false,
+
+		// Shortcut to make content "modal" - disable keyboard navigtion, hide buttons, etc
+		modal: false,
+
+		image: {
+			// Wait for images to load before displaying
+			//   true  - wait for image to load and then display;
+			//   false - display thumbnail and load the full-sized image over top,
+			//           requires predefined image dimensions (`data-width` and `data-height` attributes)
+			preload: false
+		},
+
+		ajax: {
+			// Object containing settings for ajax request
+			settings: {
+				// This helps to indicate that request comes from the modal
+				// Feel free to change naming
+				data: {
+					fancybox: true
+				}
 			}
-		} else {
-			this.container.setAttribute('data-a11y-dialog-native', '');
+		},
+
+		iframe: {
+			// Iframe template
+			tpl:
+				'<iframe id="fancybox-frame{rnd}" name="fancybox-frame{rnd}" class="fancybox-iframe" allowfullscreen allow="autoplay; fullscreen" src=""></iframe>',
+
+			// Preload iframe before displaying it
+			// This allows to calculate iframe content width and height
+			// (note: Due to "Same Origin Policy", you can't get cross domain data).
+			preload: true,
+
+			// Custom CSS styling for iframe wrapping element
+			// You can use this to set custom iframe dimensions
+			css: {},
+
+			// Iframe tag attributes
+			attr: {
+				scrolling: "auto"
+			}
+		},
+
+		// For HTML5 video only
+		video: {
+			tpl:
+				'<video class="fancybox-video" controls controlsList="nodownload" poster="{{poster}}">' +
+				'<source src="{{src}}" type="{{format}}" />' +
+				'Sorry, your browser doesn\'t support embedded videos, <a href="{{src}}">download</a> and watch with your favorite video player!' +
+				"</video>",
+			format: "", // custom video format
+			autoStart: true
+		},
+
+		// Default content type if cannot be detected automatically
+		defaultType: "image",
+
+		// Open/close animation type
+		// Possible values:
+		//   false            - disable
+		//   "zoom"           - zoom images from/to thumbnail
+		//   "fade"
+		//   "zoom-in-out"
+		//
+		animationEffect: "fade",
+
+		// Duration in ms for open/close animation
+		animationDuration: 300,
+
+		// Should image change opacity while zooming
+		// If opacity is "auto", then opacity will be changed if image and thumbnail have different aspect ratios
+		zoomOpacity: "false",
+
+		// Transition effect between slides
+		//
+		// Possible values:
+		//   false            - disable
+		//   "fade'
+		//   "slide'
+		//   "circular'
+		//   "tube'
+		//   "zoom-in-out'
+		//   "rotate'
+		//
+		transitionEffect: "false",
+
+		// Duration in ms for transition animation
+		transitionDuration: 300,
+
+		// Custom CSS class for slide element
+		slideClass: "",
+
+		// Custom CSS class for layout
+		baseClass: "",
+
+		// Base template for layout
+		baseTpl:
+			'<div class="fancybox-container" role="dialog" tabindex="-1">' +
+			'<div class="fancybox-bg"></div>' +
+			'<div class="fancybox-inner">' +
+			'<div class="fancybox-infobar"><span data-fancybox-index></span>&nbsp;/&nbsp;<span data-fancybox-count></span></div>' +
+			'<div class="fancybox-toolbar">{{buttons}}</div>' +
+			'<div class="fancybox-navigation">{{arrows}}</div>' +
+			'<div class="fancybox-stage"></div>' +
+			'<div class="fancybox-caption"><div class=""fancybox-caption__body"></div></div>' +
+			'</div>' +
+			'</div>',
+
+		// Loading indicator template
+		spinnerTpl: '<div class="fancybox-loading"></div>',
+
+		// Error message template
+		errorTpl: '<div class="fancybox-error"><p>{{ERROR}}</p></div>',
+
+		btnTpl: {
+			download:
+				'<a download data-fancybox-download class="fancybox-button fancybox-button--download" title="{{DOWNLOAD}}" href="javascript:;">' +
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.62 17.09V19H5.38v-1.91zm-2.97-6.96L17 11.45l-5 4.87-5-4.87 1.36-1.32 2.68 2.64V5h1.92v7.77z"/></svg>' +
+				"</a>",
+
+			zoom:
+				'<button data-fancybox-zoom class="fancybox-button fancybox-button--zoom" title="{{ZOOM}}">' +
+				'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.7 17.3l-3-3a5.9 5.9 0 0 0-.6-7.6 5.9 5.9 0 0 0-8.4 0 5.9 5.9 0 0 0 0 8.4 5.9 5.9 0 0 0 7.7.7l3 3a1 1 0 0 0 1.3 0c.4-.5.4-1 0-1.5zM8.1 13.8a4 4 0 0 1 0-5.7 4 4 0 0 1 5.7 0 4 4 0 0 1 0 5.7 4 4 0 0 1-5.7 0z"/></svg>' +
+				"</button>",
+
+			close:
+				'<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
+				'&times;' +
+				"</button>",
+
+			// Arrows
+			arrowLeft:
+				'<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
+				'<div><-</div>' +
+				"</button>",
+
+			arrowRight:
+				'<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
+				'<div>-></div>' +
+				"</button>",
+
+			// This small close button will be appended to your html/inline/ajax content by default,
+			// if "smallBtn" option is not set to false
+			smallBtn:
+				'<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">' +
+				'&times;' +
+				"</button>"
+		},
+
+		// Container is injected into this element
+		parentEl: "body",
+
+		// Hide browser vertical scrollbars; use at your own risk
+		hideScrollbar: true,
+
+		// Focus handling
+		// ==============
+
+		// Try to focus on the first focusable element after opening
+		autoFocus: true,
+
+		// Put focus back to active element after closing
+		backFocus: true,
+
+		// Do not let user to focus on element outside modal content
+		trapFocus: true,
+
+		// Module specific options
+		// =======================
+
+		fullScreen: {
+			autoStart: false
+		},
+
+		// Set `touch: false` to disable panning/swiping
+		touch: {
+			vertical: true, // Allow to drag content vertically
+			momentum: true // Continue movement after releasing mouse/touch when panning
+		},
+
+		// Hash value when initializing manually,
+		// set `false` to disable hash change
+		hash: null,
+
+		// Customize or add new media types
+		// Example:
+		/*
+          media : {
+            youtube : {
+              params : {
+                autoplay : 0
+              }
+            }
+          }
+        */
+		media: {},
+
+		slideShow: {
+			autoStart: false,
+			speed: 3000
+		},
+
+		thumbs: {
+			autoStart: false, // Display thumbnails on opening
+			hideOnClose: true, // Hide thumbnail grid when closing animation starts
+			parentEl: ".fancybox-container", // Container is injected into this element
+			axis: "y" // Vertical (y) or horizontal (x) scrolling
+		},
+
+		// Use mousewheel to navigate gallery
+		// If 'auto' - enabled for images only
+		wheel: "auto",
+
+		// Callbacks
+		//==========
+
+		// See Documentation/API/Events for more information
+		// Example:
+		/*
+          afterShow: function( instance, current ) {
+            console.info( 'Clicked element:' );
+            console.info( current.opts.$orig );
+          }
+        */
+
+		onInit: $.noop, // When instance has been initialized
+
+		beforeLoad: $.noop, // Before the content of a slide is being loaded
+		afterLoad: $.noop, // When the content of a slide is done loading
+
+		beforeShow: $.noop, // Before open animation starts
+		afterShow: $.noop, // When content is done loading and animating
+
+		beforeClose: $.noop, // Before the instance attempts to close. Return false to cancel the close.
+		afterClose: $.noop, // After instance has been closed
+
+		onActivate: $.noop, // When instance is brought to front
+		onDeactivate: $.noop, // When other instance has been activated
+
+		// Interaction
+		// ===========
+
+		// Use options below to customize taken action when user clicks or double clicks on the fancyBox area,
+		// each option can be string or method that returns value.
+		//
+		// Possible values:
+		//   "close"           - close instance
+		//   "next"            - move to next gallery item
+		//   "nextOrClose"     - move to next gallery item or close if gallery has only one item
+		//   "toggleControls"  - show/hide controls
+		//   "zoom"            - zoom image (if loaded)
+		//   false             - do nothing
+
+		// Clicked on the content
+		clickContent: function(current, event) {
+			return current.type === "image" ? "zoom" : false;
+		},
+
+		// Clicked on the slide
+		clickSlide: "close",
+
+		// Clicked on the background (backdrop) element;
+		// if you have not changed the layout, then most likely you need to use `clickSlide` option
+		clickOutside: "close",
+
+		// Same as previous two, but for double click
+		dblclickContent: false,
+		dblclickSlide: false,
+		dblclickOutside: false,
+
+		// Custom options when mobile device is detected
+		// =============================================
+
+		mobile: {
+			preventCaptionOverlap: false,
+			idleTime: false,
+			clickContent: function(current, event) {
+				return current.type === "image" ? "toggleControls" : false;
+			},
+			clickSlide: function(current, event) {
+				return current.type === "image" ? "toggleControls" : "close";
+			},
+			dblclickContent: function(current, event) {
+				return current.type === "image" ? "zoom" : false;
+			},
+			dblclickSlide: function(current, event) {
+				return current.type === "image" ? "zoom" : false;
+			}
 		}
-
-		// Keep a collection of dialog openers, each of which will be bound a click
-		// event listener to open the dialog
-		this._openers = $$('[data-a11y-dialog-show="' + this.container.id + '"]');
-		this._openers.forEach(
-			function(opener) {
-				opener.addEventListener('click', this._show);
-			}.bind(this)
-		);
-
-		// Keep a collection of dialog closers, each of which will be bound a click
-		// event listener to close the dialog
-		this._closers = $$('[data-a11y-dialog-hide]', this.container).concat(
-			$$('[data-a11y-dialog-hide="' + this.container.id + '"]')
-		);
-		this._closers.forEach(
-			function(closer) {
-				closer.addEventListener('click', this._hide);
-			}.bind(this)
-		);
-
-		// Execute all callbacks registered for the `create` event
-		this._fire('create');
-
-		return this;
-	};
-
-	/**
-	 * Show the dialog element, disable all the targets (siblings), trap the
-	 * current focus within it, listen for some specific key presses and fire all
-	 * registered callbacks for `show` event
-	 *
-	 * @param {Event} event
-	 * @return {this}
-	 */
-	A11yDialog.prototype.show = function(event) {
-		// If the dialog is already open, abort
-		if (this.shown) {
-			return this;
-		}
-
-		this.shown = true;
-
-		// Keep a reference to the currently focused element to be able to restore
-		// it later
-		focusedBeforeDialog = document.activeElement;
-
-		if (this.useDialog) {
-			this.dialog.showModal(event instanceof Event ? void 0 : event);
-		} else {
-			this.dialog.setAttribute('open', '');
-			this.container.removeAttribute('aria-hidden');
-
-			// Iterate over the targets to disable them by setting their `aria-hidden`
-			// attribute to `true`
-			this._targets.forEach(function(target) {
-				target.setAttribute('aria-hidden', 'true');
-			});
-		}
-
-		// Set the focus to the first focusable child of the dialog element
-		setFocusToFirstItem(this.dialog);
-
-		// Bind a focus event listener to the body element to make sure the focus
-		// stays trapped inside the dialog while open, and start listening for some
-		// specific key presses (TAB and ESC)
-		document.body.addEventListener('focus', this._maintainFocus, true);
-		document.addEventListener('keydown', this._bindKeypress);
-
-		// Execute all callbacks registered for the `show` event
-		this._fire('show', event);
-
-		return this;
-	};
-
-	/**
-	 * Hide the dialog element, enable all the targets (siblings), restore the
-	 * focus to the previously active element, stop listening for some specific
-	 * key presses and fire all registered callbacks for `hide` event
-	 *
-	 * @param {Event} event
-	 * @return {this}
-	 */
-	A11yDialog.prototype.hide = function(event) {
-		// If the dialog is already closed, abort
-		if (!this.shown) {
-			return this;
-		}
-
-		this.shown = false;
-
-		if (this.useDialog) {
-			this.dialog.close(event instanceof Event ? void 0 : event);
-		} else {
-			this.dialog.removeAttribute('open');
-			this.container.setAttribute('aria-hidden', 'true');
-
-			// Iterate over the targets to enable them by remove their `aria-hidden`
-			// attribute
-			this._targets.forEach(function(target) {
-				target.removeAttribute('aria-hidden');
-			});
-		}
-
-		// If their was a focused element before the dialog was opened, restore the
-		// focus back to it
-		if (focusedBeforeDialog) {
-			focusedBeforeDialog.focus();
-		}
-
-		// Remove the focus event listener to the body element and stop listening
-		// for specific key presses
-		document.body.removeEventListener('focus', this._maintainFocus, true);
-		document.removeEventListener('keydown', this._bindKeypress);
-
-		// Execute all callbacks registered for the `hide` event
-		this._fire('hide', event);
-
-		return this;
-	};
-
-	/**
-	 * Destroy the current instance (after making sure the dialog has been hidden)
-	 * and remove all associated listeners from dialog openers and closers
-	 *
-	 * @return {this}
-	 */
-	A11yDialog.prototype.destroy = function() {
-		// Hide the dialog to avoid destroying an open instance
-		this.hide();
-
-		// Remove the click event listener from all dialog openers
-		this._openers.forEach(
-			function(opener) {
-				opener.removeEventListener('click', this._show);
-			}.bind(this)
-		);
-
-		// Remove the click event listener from all dialog closers
-		this._closers.forEach(
-			function(closer) {
-				closer.removeEventListener('click', this._hide);
-			}.bind(this)
-		);
-
-		// Execute all callbacks registered for the `destroy` event
-		this._fire('destroy');
-
-		// Keep an object of listener types mapped to callback functions
-		this._listeners = {};
-
-		return this;
-	};
-
-	/**
-	 * Register a new callback for the given event type
-	 *
-	 * @param {string} type
-	 * @param {Function} handler
-	 */
-	A11yDialog.prototype.on = function(type, handler) {
-		if (typeof this._listeners[type] === 'undefined') {
-			this._listeners[type] = [];
-		}
-
-		this._listeners[type].push(handler);
-
-		return this;
-	};
-
-	/**
-	 * Unregister an existing callback for the given event type
-	 *
-	 * @param {string} type
-	 * @param {Function} handler
-	 */
-	A11yDialog.prototype.off = function(type, handler) {
-		var index = this._listeners[type].indexOf(handler);
-
-		if (index > -1) {
-			this._listeners[type].splice(index, 1);
-		}
-
-		return this;
-	};
-
-	/**
-	 * Iterate over all registered handlers for given type and call them all with
-	 * the dialog element as first argument, event as second argument (if any).
-	 *
-	 * @access private
-	 * @param {string} type
-	 * @param {Event} event
-	 */
-	A11yDialog.prototype._fire = function(type, event) {
-		var listeners = this._listeners[type] || [];
-
-		listeners.forEach(
-			function(listener) {
-				listener(this.container, event);
-			}.bind(this)
-		);
-	};
-
-	/**
-	 * Private event handler used when listening to some specific key presses
-	 * (namely ESCAPE and TAB)
-	 *
-	 * @access private
-	 * @param {Event} event
-	 */
-	A11yDialog.prototype._bindKeypress = function(event) {
-		// If the dialog is shown and the ESCAPE key is being pressed, prevent any
-		// further effects from the ESCAPE key and hide the dialog, unless its role
-		// is 'alertdialog', which should be modal
-		if (this.shown && event.which === ESCAPE_KEY && this.role !== 'alertdialog') {
-			event.preventDefault();
-			this.hide();
-		}
-
-		// If the dialog is shown and the TAB key is being pressed, make sure the
-		// focus stays trapped within the dialog element
-		if (this.shown && event.which === TAB_KEY) {
-			trapTabKey(this.dialog, event);
-		}
-	};
-
-	/**
-	 * Private event handler used when making sure the focus stays within the
-	 * currently open dialog
-	 *
-	 * @access private
-	 * @param {Event} event
-	 */
-	A11yDialog.prototype._maintainFocus = function(event) {
-		// If the dialog is shown and the focus is not within the dialog element,
-		// move it back to its first focusable child
-		if (this.shown && !this.container.contains(event.target)) {
-			setFocusToFirstItem(this.dialog);
-		}
-	};
-
-	/**
-	 * Convert a NodeList into an array
-	 *
-	 * @param {NodeList} collection
-	 * @return {Array<Element>}
-	 */
-	function toArray(collection) {
-		return Array.prototype.slice.call(collection);
-	}
-
-	/**
-	 * Query the DOM for nodes matching the given selector, scoped to context (or
-	 * the whole document)
-	 *
-	 * @param {String} selector
-	 * @param {Element} [context = document]
-	 * @return {Array<Element>}
-	 */
-	function $$(selector, context) {
-		return toArray((context || document).querySelectorAll(selector));
-	}
-
-	/**
-	 * Return an array of Element based on given argument (NodeList, Element or
-	 * string representing a selector)
-	 *
-	 * @param {(NodeList | Element | string)} target
-	 * @return {Array<Element>}
-	 */
-	function collect(target) {
-		if (NodeList.prototype.isPrototypeOf(target)) {
-			return toArray(target);
-		}
-
-		if (Element.prototype.isPrototypeOf(target)) {
-			return [target];
-		}
-
-		if (typeof target === 'string') {
-			return $$(target);
-		}
-	}
-
-	/**
-	 * Set the focus to the first element with `autofocus` or the first focusable
-	 * child of the given element
-	 *
-	 * @param {Element} node
-	 */
-	function setFocusToFirstItem(node) {
-		var focusableChildren = getFocusableChildren(node);
-		var focused = node.querySelector('[autofocus]') || focusableChildren[0];
-
-		if (focused) {
-			focused.focus();
-		}
-	}
-
-	/**
-	 * Get the focusable children of the given element
-	 *
-	 * @param {Element} node
-	 * @return {Array<Element>}
-	 */
-	function getFocusableChildren(node) {
-		return $$(FOCUSABLE_ELEMENTS.join(','), node).filter(function(child) {
-			return !!(
-				child.offsetWidth ||
-				child.offsetHeight ||
-				child.getClientRects().length
-			);
-		});
-	}
-
-	/**
-	 * Trap the focus inside the given element
-	 *
-	 * @param {Element} node
-	 * @param {Event} event
-	 */
-	function trapTabKey(node, event) {
-		var focusableChildren = getFocusableChildren(node);
-		var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
-
-		// If the SHIFT key is being pressed while tabbing (moving backwards) and
-		// the currently focused item is the first one, move the focus to the last
-		// focusable item from the dialog element
-		if (event.shiftKey && focusedItemIndex === 0) {
-			focusableChildren[focusableChildren.length - 1].focus();
-			event.preventDefault();
-			// If the SHIFT key is not being pressed (moving forwards) and the currently
-			// focused item is the last one, move the focus to the first focusable item
-			// from the dialog element
-		} else if (
-			!event.shiftKey &&
-			focusedItemIndex === focusableChildren.length - 1
-		) {
-			focusableChildren[0].focus();
-			event.preventDefault();
-		}
-	}
-
-	/**
-	 * Retrieve siblings from given element
-	 *
-	 * @param {Element} node
-	 * @return {Array<Element>}
-	 */
-	function getSiblings(node) {
-		var nodes = toArray(node.parentNode.childNodes);
-		var siblings = nodes.filter(function(node) {
-			return node.nodeType === 1;
-		});
-
-		siblings.splice(siblings.indexOf(node), 1);
-
-		return siblings;
-	}
-
-	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-		module.exports = A11yDialog;
-	} else if (typeof define === 'function' && define.amd) {
-		define('A11yDialog', [], function() {
-			return A11yDialog;
-		});
-	} else if (typeof global === 'object') {
-		global.A11yDialog = A11yDialog;
-	}
-})(typeof global !== 'undefined' ? global : window);
+});

@@ -31,7 +31,7 @@ $background-overlay: rgba($font-background-color, 0.5);
 /* @include background-overlay();
 - - - - - - - - - - - - - - - - - - - - - - - - - - */
 @mixin background-overlay() {
- background-color: transparent !important;
+ background-color: transparent;
  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   backdrop-filter: blur(60px);
  }
