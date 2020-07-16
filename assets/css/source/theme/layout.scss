@@ -530,6 +530,7 @@ svg path {
 /* Loading indicator */
 
 .fancybox-loading {
+  animation: fancybox-rotate 0.5s linear infinite;
   border: 2px solid $background-overlay;
   border-bottom-color: $font-color;
   height: $door-size;
