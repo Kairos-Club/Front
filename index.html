@@ -28,6 +28,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <script src="https://kit.fontawesome.com/138102e404.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body id="home">
@@ -105,59 +106,57 @@
 
     <hr>
 
-    <p>
-        <img class="zoomable" src="content/accueil-01-07-2020.jpg" alt="" />
+    <p class="max-width">
+        <a href="content/accueil-01-07-2020.jpg" data-fancybox data-caption="Caption for single image">
+            <img src="content/accueil-01-07-2020.jpg" alt="" />
+        </a>
     </p>
 
     <hr>
 
-    <div  data-dev="Gallery">
-        <div class="flex-gallery" data-dev="flex-gallery">
+    <p class="imglist">
+        <a href="https://source.unsplash.com/IvfoDk30JnI/1500x1000" data-fancybox data-caption="&lt;b&gt;Single photo&lt;/b&gt;&lt;br /&gt;Caption can contain &lt;em&gt;any&lt;/em&gt; HTML elements">
+            <img src="https://source.unsplash.com/IvfoDk30JnI/240x160" />
+        </a>
 
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/05.jpg" alt="" />
-            </figure>
-        </div>
-    </div>
+        <a href="https://source.unsplash.com/0JYgd2QuMfw/1500x1000" data-fancybox data-caption="This image has a simple caption">
+            <img src="https://source.unsplash.com/0JYgd2QuMfw/240x160" />
+        </a>
+
+        <a href="https://source.unsplash.com/xAgvgQpYsf4/1500x1000" data-fancybox>
+            <img src="https://source.unsplash.com/xAgvgQpYsf4/240x160" />
+        </a>
+    </p>
 
 
     <hr>
+
     <h2>Modal</h2>
 
     <p>
-        <label for="modal_1" class="button">Open modal</label>
+        <a class="button" data-fancybox data-src="#hidden-content" href="javascript:;">
+            --> Trigger the modal
+        </a>
     </p>
 
-    <div class="modal">
-        <input id="modal_1" type="checkbox" />
-        <label for="modal_1" class="overlay"></label>
-        <article>
-            <header>
-                <h2>Modal</h2>
-                <label for="modal_1" class="close">​​​​​‌​‌×</label>
-            </header>
-            <section>
-                <p>
-                    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
-                    abcdefghijklmnopqrstuvwxyz<br>
-                    1234567890
-                </p>
-                <p>Apparently we had reached a great height in the atmosphere,
-                    for the sky was a dead black, and the stars had ceased to twinkle.
-                    By the same illusion which lifts the horizon of the sea to the level
-                    of the spectator on a hillside, the sable cloud beneath was dished out,
-                    and the car seemed to float in the middle of an immense dark sphere, whose upper
-                    half was strewn with silver. Looking down into the dark gulf below,
-                    I could see a ruddy light streaming through a rift in the clouds.</p>
-            </section>
-            <footer>
-                <a class="button" href="#">Ok</a>
-                <label for="modal_1" class="button dangerous">
-                    Cancel
-                </label>
-            </footer>
-        </article>
+    <div style="display: none;" id="hidden-content">
+        <h2>
+            Title
+        </h2>
+        <p>
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+            abcdefghijklmnopqrstuvwxyz<br>
+            1234567890
+        </p>
+        <p>Apparently we had reached a great height in the atmosphere,
+            for the sky was a dead black, and the stars had ceased to twinkle.
+            By the same illusion which lifts the horizon of the sea to the level
+            of the spectator on a hillside, the sable cloud beneath was dished out,
+            and the car seemed to float in the middle of an immense dark sphere, whose upper
+            half was strewn with silver. Looking down into the dark gulf below,
+            I could see a ruddy light streaming through a rift in the clouds.</p>
     </div>
+
 
     <hr>
 
@@ -1069,6 +1068,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js" integrity="sha256-Jd9xef1tT52aCb+cAqhElj/9D3c99lQvEjyKOuPn3S4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous"></script>
 <script src="assets/js/main.min.js"></script>
 
 </body>

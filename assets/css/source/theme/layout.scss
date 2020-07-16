@@ -45,7 +45,7 @@ p a:hover {
   padding: ($door-size + $door-padding) $door-size $door-size*3 $door-size*4;
 }
 
-p {
+p.max-width {
   max-width: 600px;
 }
 
@@ -337,118 +337,4 @@ svg path {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.modal {
-  //text-align: center;
-
-  // This is the elemet that allows for show/hide without requiring javascript
-  > input {
-
-    // The input is only for functionality, so hide it
-    display: none;
-
-    ~ * {
-
-      // By default, they are not visible
-      opacity: 0;
-
-      // Also hide it from any iteraction
-      max-height: 0;
-      overflow: hidden;
-    }
-  }
-
-  .overlay {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: fixed;
-    margin: 0;
-    border-radius: 0;
-    transition: $picnic-transition;
-    z-index: 100000;
-
-    //@include background-overlay();
-
-    &:before,
-    &:after {
-      display: none;
-    }
-
-    // All of the elements that follow the overlay (the modals)
-    ~ * {
-
-      border-radius: $door-padding/2;
-      //background-color: $font-background-color;
-      padding: $door-padding;
-      //width: 100%;
-      max-width: 800px;
-      min-width: 320px;
-
-      max-height: 100%;
-
-      border: 0;
-
-
-
-      @include background-box();
-
-      // Position it in the middle of the screen on top of everything
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%) scale(.95, .95);
-      z-index: 1000000;
-
-      // Hiding effect
-      transition: $picnic-transition;
-
-      .close {
-        //background-color: red;
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        width: $door-size*2;
-        height: $door-size*2;
-
-        line-height: $door-size*2;
-        text-align: center;
-      }
-    }
-  }
-
-  // When the checkbox is checked (modal should be showing)
-  > input:checked {
-
-    // All the visible elements
-    ~ * {
-      display: block;
-      opacity: 1;
-      max-height: 10000px;
-      transition: $picnic-transition;
-    }
-
-    // This position is only for the modal, not for the overlay
-    // It says: grab everything that is after the overlay after the input
-    ~ .overlay ~ * {
-      max-height: 100%;
-      overflow: auto;
-      transform: translateX(-50%) translateY(-50%) scale(1, 1);
-    }
-  }
-}
 
