@@ -264,6 +264,29 @@
 		"oS": 3,
 		"sct": 0
 		},
+	"/assets/css/source/plugin/jquery.fancybox.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/source/plugin/jquery.fancybox-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/assets/css/source/plugin/jquery.fancybox.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"ec": 1,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/assets/css/source/plugin/jquery.fancybox.css",
+		"oF": 0,
+		"oS": 0,
+		"sct": 0
+		},
 	"/assets/css/source/theme/icone.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -700,6 +723,17 @@
 		"opt": 1,
 		"q": 100
 		},
+	"/content/accueil-16-06-2020.jpg": {
+		"ft": 16384,
+		"iS": 2454488,
+		"jF": 1,
+		"oA": 0,
+		"oAP": "/content/accueil-16-06-2020.jpg",
+		"oF": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"q": 80
+		},
 	"/content/art-of-fighting/01.jpg": {
 		"ft": 16384,
 		"iS": 258454,
@@ -909,6 +943,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"/content/colophon-five-year-editions-apercu-1400.jpg": {
+		"ft": 16384,
+		"iS": 273745,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/colophon-five-year-editions-apercu-1400.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/content/fondamenta/01.jpg": {
 		"ft": 16384,
 		"iS": 222450,
@@ -948,6 +993,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/content/fondamenta/04.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/content/intl-poster-2-1400.jpg": {
+		"ft": 16384,
+		"iS": 149852,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/intl-poster-2-1400.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1102,6 +1158,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/content/lomepal-jeannine/07.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/content/pep-alphabet-4-1400.jpg": {
+		"ft": 16384,
+		"iS": 309188,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/pep-alphabet-4-1400.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -1311,6 +1378,17 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/content/the-neon-demon/06.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/content/wizard-1-1400.jpg": {
+		"ft": 16384,
+		"iS": 324343,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/wizard-1-1400.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
