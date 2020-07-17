@@ -128,7 +128,7 @@ p img {
     opacity: 0;
     transform: translateX(-150%);
     overflow: auto;
-    max-height: 100%;
+    max-height: calc(100vh - 80px);
 
     @include background-box();
 
