@@ -6,21 +6,22 @@
 /* Global
 -------------------------------------------------- */
 code, kbd, samp, pre, tt, var, mark, abbr {
-  @include border-radius(3px)
+  @include border-radius(5px)
 }
 
 /* Buttons
 -------------------------------------------------- */
+.fancybox-button,
 button, .button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
 .inputfile + label {
-  @include border-radius(3px);
+  @include border-radius(5px);
 }
 
 /* Input
 -------------------------------------------------- */
 input, textarea, select {
-  @include border-radius(3px);
+  @include border-radius(5px);
 }

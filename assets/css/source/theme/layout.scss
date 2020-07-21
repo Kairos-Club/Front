@@ -392,7 +392,7 @@ svg path {
 
 
 
-  bottom: 0;
+  bottom: $door-padding;
   color: $font-color;
   font-size: inherit;
   font-weight: inherit;
@@ -445,31 +445,16 @@ svg path {
   font-size: $door-size;
   line-height: $door-size;
 
-  background: inherit;
-  border: none;
-  border-radius: $door-padding/2;
-  box-shadow: none;
-  cursor: pointer;
-  display: inline-block;
   height: $door-size*2;
   margin: 0;
   padding: $door-padding;
-  position: relative;
-  transition: color .2s;
   vertical-align: middle;
-  visibility: inherit;
   width: $door-size*2;
+
+  @include background-box();
+
 }
 
-.fancybox-button,
-.fancybox-button:visited,
-.fancybox-button:link {
-  color: inherit;
-}
-
-.fancybox-button:hover {
-  color: inherit;
-}
 
 .fancybox-button:focus {
   outline: none;
@@ -520,6 +505,7 @@ svg path {
   margin-left: $door-size;
   left: 0;
 }
+
 
 
 

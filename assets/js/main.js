@@ -149,7 +149,7 @@ $('[data-fancybox]').fancybox({
 		//   "zoom-in-out'
 		//   "rotate'
 		//
-		transitionEffect: "false",
+		transitionEffect: "fade",
 
 		// Duration in ms for transition animation
 		transitionDuration: 300,
@@ -192,18 +192,18 @@ $('[data-fancybox]').fancybox({
 
 			close:
 				'<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' +
-				'&times;' +
+				'<i class="fas fa-times"></i>' +
 				"</button>",
 
 			// Arrows
 			arrowLeft:
 				'<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}">' +
-				'<div><-</div>' +
+				'<div><i class="fas fa-arrow-left"></i></div>' +
 				"</button>",
 
 			arrowRight:
 				'<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">' +
-				'<div>-></div>' +
+				'<div><i class="fas fa-arrow-right"></i></div>' +
 				"</button>",
 
 			// This small close button will be appended to your html/inline/ajax content by default,
