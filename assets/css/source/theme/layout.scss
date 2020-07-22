@@ -43,6 +43,9 @@ p a:hover {
 
 .page-content {
   padding: ($door-size + $door-padding) $door-size $door-size*3 $door-size*4;
+  p {
+    max-width: 600px;
+  }
 }
 
 p.max-width {
@@ -210,7 +213,7 @@ p img {
     padding: $door-padding;
 
     img {
-      //border-radius: $door-padding/2;
+      border-radius: $door-padding/2;
       overflow: hidden;
       max-height: 200px;
     }
@@ -259,7 +262,7 @@ p img {
       overflow: hidden;
 
       border-radius: 100%;
-      border: $door-padding/2 solid $font-background-color;
+      border: $door-padding/2 solid lighten($background-color, 20%);
 
       img {
         width: 100%;
@@ -323,12 +326,12 @@ svg path {
 -------------------------------------------------- */
 .fancybox-container {
   z-index: 9;
-  color: $font-color;
+  //color: $font-color;
 }
 
 .fancybox-bg {
   //@include background-overlay();
-
+  //@include background-box();
   background-color: $background-color;
 }
 
@@ -383,23 +386,16 @@ svg path {
 .fancybox-caption {
   background: linear-gradient(to top,
           rgba(0, 0, 0, 0) 0%,
-          rgba(0, 0, 0, 0) 50%,
-          rgba(0, 0, 0, 0) 65%,
-          rgba(0, 0, 0, 0) 75.5%,
-          rgba(0, 0, 0, 0) 82.85%,
-          rgba(0, 0, 0, 0) 88%,
           rgba(0, 0, 0, 0) 100%);
 
-
-
   bottom: $door-padding;
-  color: $font-color;
+  //color: $font-color;
   font-size: inherit;
   font-weight: inherit;
   left: 0;
   line-height: $door-size;
   padding: $door-size $door-size*4;
-  pointer-events: inherit;
+  //pointer-events: inherit;
   right: 0;
   text-align: center;
   z-index: 99996;
@@ -407,25 +403,7 @@ svg path {
 
 
 .fancybox-caption--separate {
-  margin-top: -50px;
-}
-
-.fancybox-caption__body {
-  max-height: 50vh;
-  overflow: auto;
-  pointer-events: all;
-}
-
-.fancybox-caption a,
-.fancybox-caption a:link,
-.fancybox-caption a:visited {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.fancybox-caption a:hover {
-  color: inherit;
-  text-decoration: inherit;
+  //margin-top: -50px;
 }
 
 
@@ -435,7 +413,6 @@ svg path {
   top: $door-size;
   right: $door-size;
 }
-
 
 
 /* Buttons */
@@ -466,9 +443,7 @@ svg path {
 
 .fancybox-button[disabled],
 .fancybox-button[disabled]:hover {
-  color: inherit;
-  cursor: default;
-  outline: none;
+  opacity: 0 !important;
 }
 
 .fancybox-navigation .fancybox-button--arrow_right,
