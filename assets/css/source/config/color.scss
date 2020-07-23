@@ -53,20 +53,20 @@ input[type="submit"]:hover, input[type="submit"]:focus,
 input[type="reset"]:hover, input[type="reset"]:focus,
 input[type="button"]:hover, input[type="button"]:focus,
 .inputfile:focus + label, .inputfile + label:hover{
-  color: $font-background-color;
-  background-color: $font-color;
+  opacity: .8 !important;
 }
 
 .button-light,
 .button-light:hover,
 .button-light:focus {
   color: $font-color !important;
-  background-color: transparent !important;
+  background-color: $background-color !important;
+  border-color: $font-background-color !important;
 }
 
 .button-light:hover,
 .button-light:focus {
-  background-color: $font-background-color !important;
+  opacity: .8 !important;
 }
 
 .button-hard,
@@ -74,12 +74,12 @@ input[type="button"]:hover, input[type="button"]:focus,
 .button-hard:focus {
   color: $font-background-color !important;
   background-color: $font-color !important;
+  border-color: $font-color !important;
 }
 
 .button-hard:hover,
 .button-hard:focus {
-  color: $font-color !important;
-  background-color: $background-color !important;
+  opacity: .8 !important;
 }
 
 /* Input, Textarea and Select Color

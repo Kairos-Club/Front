@@ -79,6 +79,12 @@ hr {
 
 ol, ul, dl {
   margin-bottom: $door-size;
+  ol, ul, dl {
+    margin-bottom: inherit;
+    ol, ul, dl {
+      margin-bottom: inherit;
+    }
+  }
 }
 
 ol, ul, dl, dd {
@@ -132,10 +138,12 @@ input[type="button"] {
   text-align: center;
   white-space: nowrap;
   width: auto;
-  max-width: inherit;
+  max-width: 100%;
 
   padding: $door-padding - $doorframe-size;
+  //padding: $door-padding;
   border: $doorframe-size solid;
+  margin: $doorframe-size;
 
   box-shadow: none;
   -moz-box-shadow: none;
@@ -146,6 +154,10 @@ input[type="button"] {
   -webkit-appearance: none;
 
   box-sizing: border-box;
+
+  overflow: hidden;
+  vertical-align: top;
+  text-overflow: ellipsis;
 }
 
 .button-hard,

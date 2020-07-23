@@ -158,19 +158,19 @@
 
     <p>
         <a class="button" data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk">
-            YouTube video
+            YouTube
         </a>
 
         <a class="button" data-fancybox href="https://vimeo.com/191947042">
-            Vimeo video
+            Vimeo
         </a>
 
         <a class="button" data-fancybox data-width="640" data-height="360" href="video.mp4">
-            Direct link to MP4 video
+            MP4
         </a>
 
         <a class="button" data-fancybox href="#myVideo">
-            HTML5 video element
+            HTML5
         </a>
 
         <video width="640" height="320" controls id="myVideo" style="display:none;">
@@ -185,11 +185,11 @@
 
     <p>
         <a class="button" data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
-            YouTube video - hide controls and info
+            YouTube<br>(hide controls)
         </a>
 
         <a class="button" data-fancybox href="https://vimeo.com/191947042?color=00F">
-            Vimeo video - custom color
+            Vimeo<br>(custom color)
         </a>
     </p>
 
@@ -203,11 +203,7 @@
         </a>
 
         <a class="button" data-fancybox data-type="iframe" data-src="https://mozilla.github.io/pdf.js/web/viewer.html" href="javascript:;">
-            Sample PDF file
-        </a>
-
-        <a class="button" data-fancybox data-type="iframe" data-src="https://distribution.bigwax.fr/client" href="javascript:;">
-            Login (Webpage)
+            PDF
         </a>
     </p>
 
@@ -216,7 +212,7 @@
     <h2>Modal</h2>
 
     <p>
-        <a data-fancybox data-touch="false" href="#modal" class="button">--> Open Modal</a>
+        <a data-fancybox data-touch="false" href="#modal" class="button">Default</a>
     </p>
 
     <div id="modal">
@@ -510,18 +506,38 @@
     <hr>
     <h2>Buttons</h2>
 
-    <p>
-        <button class="button-hard">-> Hard</button>
-        <button>-> Default</button>
-        <button class="button-light">-> Light</button>
-    </p>
+    <div class="flex-content">
 
-    <p>
-        <a class="button" href="#">'a' element</a>
-        <button>'button' element</button>
-        <input type="submit" value="Input Type 'submit'">
-        <input type="button" value="Input Type 'button'">
-    </p>
+        <p style="width: 33%">
+            <button class="button-hard">-> Hard</button>
+        </p>
+
+        <p style="width: 33%">
+            <button>-> Default</button>
+        </p>
+
+        <p style="width: 33%">
+            <button class="button-light">-> Light</button>
+        </p>
+
+    </div>
+
+    <div class="flex-content">
+
+        <p style="width: 33%">
+            <button class="button-hard">-> Hard</button><a class="button button-hard" href="#">'a' element</a><button  class="button-hard">'button' element</button><input  class="button-hard" type="submit" value="Input Type 'submit'"><input  class="button-hard" type="button" value="Input Type 'button'">
+        </p>
+
+        <p style="width: 33%">
+            <button>-> Default</button><a class="button" href="#">'a' element</a><button>'button' element</button><input type="submit" value="Input Type 'submit'"><input type="button" value="Input Type 'button'">
+        </p>
+
+        <p style="width: 33%">
+            <button class="button-light">-> Light</button><a class="button button-light" href="#">'a' element</a><button  class="button-light">'button' element</button><input  class="button-light" type="submit" value="Input Type 'submit'"><input  class="button-light" type="button" value="Input Type 'button'">
+        </p>
+
+    </div>
+
 
     <h4>Buttons disabled</h4>
 
@@ -546,7 +562,7 @@
     <hr>
     <h2>Fieldset</h2>
 
-    <form>
+    <form class="flex-content">
 
         <fieldset>
 
@@ -834,7 +850,7 @@
     <hr>
     <h2>Form</h2>
 
-    <form style="max-width: 650px">
+    <form class="flex-content">
 
         <fieldset>
 
@@ -865,10 +881,6 @@
             <input class="button-hard" type="submit" value="Submit">
 
         </fieldset>
-
-    </form>
-
-    <form style="max-width: 650px">
 
         <fieldset>
 
@@ -1080,7 +1092,7 @@
         <div class="organigramme" data-dev="organigramme">
             <div class="structure" data-dev="structure">
                 <div class="avatar"><img src="assets/icone/front.svg" /></div>
-                <p>Structure<br>↪ <i>Description</i></p>
+                <p>Front<br>↪ <i>Framework frontend</i></p>
             </div>
             <div class="persona" data-dev="persona">
                 <div class="avatar"><img src="https://organigramme.kairosclub.fr/avatar/avatar-default.png" /></div>
@@ -1111,42 +1123,11 @@
 
     <hr>
 
-    <!-- radioooooo -->
-    <div  data-dev="Gallery">
-
-        <h2 class="editable"><i>Titre</i><br />Sous-titre</h2>
-
-        <div class="flex-gallery" data-dev="flex-gallery">
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/01.jpg" alt="" />
-            </figure>
-
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/02.jpg" alt="" />
-            </figure>
-
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/03.jpg" alt="" />
-            </figure>
-
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/04.jpg" alt="" />
-            </figure>
-
-            <figure data-dev="figure">
-                <img class="zoomable" src="content/radioooooo/05.jpg" alt="" />
-            </figure>
-        </div>
-
-        <hr />
-
-    </div>
-
     <div class="editable">
         <h2>Contact</h2>
 
         <p>
-            <b>Front</b><br />59 rue Jean-Pierre Timbaud<br />75011 Paris - France<br>
+            <b>Front<br>C/o Kairos Club</b><br />59 rue Jean-Pierre Timbaud<br />75011 Paris - France<br>
             <br>
             <a href="mailto:front@kairosclub.fr">front@kairosclub.fr</a><br />+33.(0)9.50.14.23.28
         </p>

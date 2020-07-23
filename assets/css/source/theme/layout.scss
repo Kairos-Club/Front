@@ -21,9 +21,7 @@ html {
 
 /* z-index
 -------------------------------------------------- */
-.medium-zoom-image--opened { z-index: 999 }
 .site-icone { z-index: 99 }
-.medium-zoom-overlay { z-index: 9 }
 .switch { z-index: 5 }
 .page-content { z-index: 1 }
 
@@ -57,7 +55,9 @@ u {
 }
 
 form {
-  max-width: 300px;
+  fieldset {
+    max-width: 100%;
+  }
 }
 
 p img {
@@ -219,6 +219,21 @@ p img {
     }
   }
 }
+/* Flex Content
+-------------------------------------------------- */
+.flex-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  fieldset {
+    //margin-bottom: $doorframe-size/2;
+    //margin-top: -$doorframe-size/2;
+    margin-left: -$doorframe-size/2;
+    margin-right: -$doorframe-size/2;
+  }
+}
 
 /* Organigramme
 -------------------------------------------------- */
@@ -262,7 +277,7 @@ p img {
       overflow: hidden;
 
       border-radius: 100%;
-      border: $door-padding/2 solid lighten($background-color, 20%);
+      border: $door-padding/2 solid lighten($font-background-color, 5%);
 
       img {
         width: 100%;
