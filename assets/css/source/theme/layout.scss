@@ -12,6 +12,11 @@ html {
   cursor: default;
 }
 
+* {
+  scroll-behavior: smooth;
+  overflow-scrolling: touch;
+}
+
 
 /* z-index
 -------------------------------------------------- */
@@ -390,6 +395,7 @@ svg path {
   }
 }
 
+
 #modal .fancybox-close-small {
   top: inherit;
   bottom: $door-size;
@@ -403,9 +409,12 @@ svg path {
 }
 
 #modal .content-scroll {
+
   //max-height: calc(100vh - 200px);
-  overflow: auto;
+
   padding: $door-size $door-size 0;
+
+  overflow: auto;
 }
 
 
