@@ -8,14 +8,8 @@
 $picnic-transition: all .15s ease-in-out;
 
 
-
 html {
   cursor: default;
-}
-
-:root {
-  --fa-primary-color: $font-color;
-  --fa-secondary-color: lighten($font-color, 40%);
 }
 
 
@@ -283,6 +277,12 @@ p img {
         width: 100%;
       }
     }
+
+    .avatar.ghost {
+      border-radius: 100% 100% 45% 45%;
+      //background-color: $background-color;
+      //outline: 1px solid red;
+    }
   }
 
   .structure {
@@ -344,10 +344,15 @@ svg path {
   //color: $font-color;
 }
 
+.dark {
+  .fancybox-bg {
+    background-color: $font-color;
+  }
+}
+
 .fancybox-bg {
-  //@include background-overlay();
-  //@include background-box();
   background-color: $background-color;
+
 }
 
 .fancybox-is-open .fancybox-bg {
@@ -378,13 +383,21 @@ svg path {
   border-radius: $door-padding/2;
 
   @include background-box();
+
+  hr {
+    margin-left: -$door-size;
+    margin-right: -$door-size;
+  }
 }
 
 #modal .fancybox-close-small {
-  top: $door-size;
+  top: inherit;
+  bottom: $door-size;
+  right: $door-size;
 }
 
 #modal .content-header {
+  font-variation-settings: "wght" 700;
   border-bottom: $doorframe-size solid $font-background-color;
   padding: $door-size;
 }
@@ -443,7 +456,7 @@ svg path {
   vertical-align: middle;
   width: $door-size*2;
 
-  @include background-box();
+  //@include background-box();
 
 }
 
@@ -517,3 +530,33 @@ svg path {
   width: $door-size;
   z-index: 99999;
 }
+
+
+
+
+/* dark-mode-toggle
+-------------------------------------------------- */
+
+
+dark-mode-toggle {
+  --dark-mode-toggle-remember-icon-checked: url("checked.svg");
+  --dark-mode-toggle-remember-icon-unchecked: url("unchecked.svg");
+  --dark-mode-toggle-background-color: none;
+
+  fieldset {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+#dark-mode-toggle {
+  --dark-mode-toggle-dark-icon: url("/assets/icone/dark.svg");
+  --dark-mode-toggle-light-icon: url("/assets/icone/light.svg");
+  --dark-mode-toggle-icon-size: 20px;
+  --dark-mode-toggle-active-mode-background-color: var(--accent-color);
+}
+
+#dark-mode-toggle::part(toggleLabel)::before {
+  margin-inline-end: 0;
+}
+

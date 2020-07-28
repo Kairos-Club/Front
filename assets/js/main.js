@@ -369,7 +369,7 @@ $('[data-fancybox]').fancybox({
 		// if "smallBtn" option is not set to false
 		smallBtn:
 			'<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}">' +
-			'&times;' +
+			'<i class="fas fa-times"></i>' +
 			"</button>"
 	},
 
@@ -514,7 +514,6 @@ $('[data-fancybox]').fancybox({
 		}
 	}
 });
-
 
 
 // Console

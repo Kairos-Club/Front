@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>light</title>
+    <desc>Created with Sketch.</desc>
+    <g id="light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="adjust-copy-3" transform="translate(10.000000, 10.000000) rotate(-180.000000) translate(-10.000000, -10.000000) translate(-0.000000, 0.000000)" fill="#000000" fill-rule="nonzero">
+            <path d="M20,10 C20,15.5241935 15.5241935,20 10,20 L10,0 C15.5241935,0 20,4.47580645 20,10 Z" id="Path" fill-opacity="0.5"></path>
+            <path d="M10,0 L10,20 C4.47580645,20 0,15.5241935 0,10 C0,4.47580645 4.47580645,0 10,0 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>
