@@ -364,12 +364,53 @@ svg path {
 
 .fancybox-slide,
 .fancybox-slide--image {
-  padding: $door-size*4 $door-padding !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.fancybox-slide{
+
 }
 
 .fancybox-slide--image {
+  padding: $door-size !important;
   img {
     border-radius: $door-padding/2;
+  }
+}
+
+.fancybox-content {
+  width: 100%;
+  margin: 0;
+  padding: $door-size;
+  background-color: $background-color;
+
+  @media (max-width: 760px) {
+    padding: $door-size*4 $door-size $door-size;
+  }
+
+}
+
+.fancybox-slide--html .fancybox-close-small {
+  position: fixed;
+  top: $door-size;
+  right: $door-size;
+}
+
+
+.modal-inline-content {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto !important;
+  padding: $door-size;
+
+  border-radius: $door-padding/2;
+
+  @include background-box();
+
+  hr {
+    margin-left: -$door-size;
+    margin-right: -$door-size;
   }
 }
 

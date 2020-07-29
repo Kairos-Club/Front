@@ -229,8 +229,8 @@
 		"sct": 0
 		},
 	"/assets/css/source/imports.scss": {
-		"aP": 0,
-		"bl": 0,
+		"aP": 1,
+		"bl": 1,
 		"dP": 10,
 		"ec": 1,
 		"ft": 4,
@@ -734,6 +734,17 @@
 		"opt": 1,
 		"q": 80
 		},
+	"/content/accueil-28-07-2020.jpg": {
+		"ft": 16384,
+		"iS": 410925,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/accueil-28-07-2020.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"/content/art-of-fighting/01.jpg": {
 		"ft": 16384,
 		"iS": 258454,
@@ -1158,6 +1169,28 @@
 		"jF": 0,
 		"oA": 0,
 		"oAP": "/content/lomepal-jeannine/07.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/content/ok-img_6670.jpg": {
+		"ft": 16384,
+		"iS": 469814,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/ok-img_6670.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"/content/ok-img_6675.jpg": {
+		"ft": 16384,
+		"iS": 552888,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/content/ok-img_6675.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,

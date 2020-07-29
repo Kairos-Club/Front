@@ -318,12 +318,6 @@ body.compensate-for-scrollbar {
 /* Close button on the top right corner of html content */
 
 .fancybox-close-small {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  cursor: pointer;
-  opacity: .8;
-  padding: 8px;
   position: absolute;
   right: -12px;
   top: -44px;
@@ -331,12 +325,10 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-close-small:hover {
-  opacity: 1;
+
 }
 
 .fancybox-slide--html .fancybox-close-small {
-  color: currentColor;
-  padding: 10px;
   right: 0;
   top: 0;
 }

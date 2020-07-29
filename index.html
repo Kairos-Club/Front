@@ -36,7 +36,7 @@
     <script type="module" src="https://googlechromelabs.github.io/dark-mode-toggle/src/dark-mode-toggle.mjs"></script>
 
 </head>
-<body id="home">
+<body id="home" ontouchmove >
 
 <div class="site-icone">
     <div class="icone">
@@ -109,7 +109,7 @@
         <a href="https://github.com/Kairos-Club/Front"><i class="fab fa-github"></i> https://github.com/Kairos-Club/Front</a>
     </p>
 
-    <hr>
+    <hr />
 
     <h2>Opportunités</h2>
 
@@ -117,21 +117,23 @@
         <div class="persona" data-dev="persona">
             <div class="avatar ghost"><img src="https://organigramme.kairosclub.fr/avatar/avatar-default.png" /></div>
             <p>Assistant.e de communication<br />
-                <a data-fancybox data-touch="false" href="#modal">↪ Consulter</a>
+                <a data-fancybox data-src="#hidden-content" data-touch="false" href="javascript:;">
+                    ↪ Consulter
+                </a>
             </p>
         </div>
     </div>
 
-    <div id="modal">
-
-        <div class="content-scroll">
-
-            <p>
+    <div style="display: none;" id="hidden-content">
+        <div class="modal-inline-content">
+            <h2>
                 Assistant.e de communication,<br>relations presse et community management
-            </p>
+            </h2>
 
             <p>
-                <img src="content/accueil-16-06-2020.jpg" />
+                <a href="content/ok-img_6670.jpg" data-fancybox data-caption="Charlotte & Mélanie say Hello ✌️">
+                    <img src="content/ok-img_6670.jpg" />
+                </a>
             </p>
 
             <hr>
@@ -157,7 +159,7 @@
             <h4>Durée et période du stage</h4>
 
             <p>
-                 6 mois avec convention de stage obligatoire, pas d’alternance, stage à temps complet 35 heures par semaine.
+                -> 6 mois avec convention de stage obligatoire, pas d’alternance, stage à temps complet 35 heures par semaine.
             </p>
 
             <p>
@@ -178,15 +180,14 @@
 
             <hr>
 
-            <p>
-                <a href="#" class="button button-hard">↪ Postuler</a>
-            </p>
+            <a href="#" class="button">↪ Postuler</a>
 
         </div>
     </div>
 
     <p>
-        Aucun autre poste n’est ouvert à ce jour mais nous sommes toujours curieux de découvrir de nouveaux profils. N’hésitez donc pas à nous faire parvenir vos <a href="mailto:###">candidatures spontanées</a> !
+        Aucun autre poste n’est ouvert à ce jour mais nous sommes toujours curieux de découvrir de nouveaux profils.
+        N’hésitez pas à nous faire parvenir vos <a href="mailto:###">candidatures spontanées</a> !
     </p>
 
     <hr>
@@ -194,8 +195,8 @@
     <h2>Image</h2>
 
     <p class="max-width">
-        <a href="content/accueil-01-07-2020.jpg" data-fancybox data-caption="Front accueil ✌️">
-            <img src="content/accueil-01-07-2020.jpg" />
+        <a href="content/accueil-28-07-2020.jpg" data-fancybox data-caption="Front accueil ✌️">
+            <img src="content/accueil-28-07-2020.jpg" />
         </a>
     </p>
 
