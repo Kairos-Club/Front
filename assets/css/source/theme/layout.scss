@@ -52,6 +52,7 @@ u {
 }
 
 form {
+  max-width: 300px;
   fieldset {
     max-width: 100%;
   }
@@ -230,6 +231,14 @@ p img {
     margin-left: -$doorframe-size/2;
     margin-right: -$doorframe-size/2;
   }
+
+  p {
+    margin-right: $door-size;
+  }
+
+  p:last-child {
+    margin-right: 0;
+  }
 }
 
 /* Organigramme
@@ -317,6 +326,7 @@ svg path {
 }
 
 
+
 /* Embed video
 -------------------------------------------------- */
 .fd-video {
@@ -336,8 +346,33 @@ svg path {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: $door-padding/2;
 }
 
+
+
+/* Hand Clock
+-------------------------------------------------- */
+.gmt {
+  text-align: center;
+  width: fit-content;
+  margin-bottom: $door-size;
+
+  hand-clock {
+    display: block;
+    margin: auto;
+    width: fit-content;
+    padding-bottom: $door-padding;
+  }
+
+  strong {
+    color: $background-color;
+    background-color: $font-color;
+    padding: 1px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+}
 
 
 /* FancyBox 3
@@ -608,3 +643,88 @@ dark-mode-toggle {
   margin-inline-end: 0;
 }
 
+
+
+
+
+/* Timer (Opening Hours) Bigwax Rec
+-------------------------------------------------- */
+
+.img-intro {
+  position: relative;
+  max-width: 600px;
+
+  margin-top: $door-size*3;
+  margin-bottom: $door-size*2;
+
+  //overflow: hidden;
+
+  img {
+    border-radius: $door-padding/2;
+  }
+}
+
+.current-status-placeholder,
+.closing-in-placeholder {
+  position: absolute;
+  pointer-events: none;
+
+  color: $background-color;
+  background-color: #fff632;
+}
+
+.current-status-placeholder {
+  top: -$door-padding*6;
+  right: $door-padding*2;
+
+  animation: blinker 3.4557519189487724s linear infinite;
+}
+
+.closing-in-placeholder  {
+  bottom: $door-padding;
+  right: 0;
+}
+
+@media (min-width: 780px) {
+  .current-status-placeholder {
+    //outline: 2px solid red;
+
+    top: $door-padding*5;
+    right: -$door-padding*6;
+  }
+
+  .img-intro {
+    margin-top: 0;
+    margin-bottom: $door-size;
+  }
+}
+
+@keyframes blinker {
+  100% { transform: rotate(360deg);}
+}
+
+.current-status-placeholder {
+
+  width: 120px;
+  height: 120px;
+
+  display: inline-block;
+  border-radius: 100%;
+
+  font-size: 20px;
+  line-height: 120px;
+
+  text-transform: uppercase;
+
+  text-align: center;
+}
+
+.closing-in-placeholder {
+  display: inline-block;
+
+  padding: 5px 10px;
+  border-radius: 5px;
+
+  margin-left: $door-padding;
+  margin-right: $door-padding;
+}
