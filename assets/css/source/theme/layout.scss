@@ -94,6 +94,13 @@ p img {
 
 /* Switch
 -------------------------------------------------- */
+
+body:hover {
+  .sw-list {
+    animation-delay: 0s;
+  }
+}
+
 .switch {
   width: auto;
   display: inline-block;
@@ -118,16 +125,27 @@ p img {
 
       + .sw-list {
         opacity: 1;
-        transform: translateX(0%);
+        //transform: translateY(0%);
+        //animation: switch-in .1s ease-out forwards;
+        animation: switch-in 0s ease-out forwards;
       }
     }
   }
 
   .sw-list {
-    //transition: opacity .1s ease-in, backdrop-filter .1s ease-in;
+
+    //animation: switch-out .15s linear forwards;
+    animation: switch-out 0s linear forwards;
+    animation-delay: 2s;
+
+    transform-origin: 0 0;
+
+    //transition: translateY .2s ease-in-out;
+
     padding: ($door-padding + $door-padding/2) $door-size;
-    opacity: 0;
-    transform: translateX(-150%);
+    opacity: 1;
+    //opacity: 0;
+    //transform: translateY(100%);
     overflow: auto;
     max-height: calc(100vh - 80px);
 
@@ -136,7 +154,9 @@ p img {
     &:hover {
       z-index: 2;
       opacity: 1;
-      transform: translateX(0%);
+      //transform: translateY(0%);
+      //animation: switch-in .1s ease-out forwards;
+      animation: switch-in 0s ease-out forwards;
     }
   }
 
@@ -181,6 +201,16 @@ p img {
       }
     }
   }
+}
+
+@keyframes switch-out {
+  0% { transform: translateX(0%) scaleX(1)}
+  100% { transform: translateX(-50%) scaleX(0.5)}
+}
+
+@keyframes switch-in {
+  0% { transform: translateX(-50%) scaleX(0.5)}
+  100% { transform: translateX(0%) scaleX(1)}
 }
 
 /* Site Icone + switch
