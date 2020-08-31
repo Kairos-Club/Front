@@ -13,6 +13,9 @@ class HandClock extends HTMLElement {
 		const secondHand = document.createElement('div');
 		const style = document.createElement('style');
 		const size = this.getAttribute('size');
+		const color_bg = this.getAttribute('color_bg');
+		const color_hand = this.getAttribute('color_hand');
+		const color_second = this.getAttribute('color_second');
 
 		clockFace.setAttribute('class', 'clock-face');
 		hourHand.setAttribute('class', 'hour hand');
@@ -33,10 +36,10 @@ class HandClock extends HTMLElement {
       .clock-face {
         align-items: center;
         justify-content: center;
-        border: 2px solid black;
+        border: 2px solid ${color_bg};
         border-radius: 50%;
         display: flex;
-        background-color: black;
+        background-color: ${color_bg};
         height: ${size}px;
         width: ${size}px;
       }
@@ -49,7 +52,7 @@ class HandClock extends HTMLElement {
         transform: rotate(-90deg);
       }
       .hand::after {
-        background: white;
+        background: ${color_hand};
         content: '';
         margin-left: ${size / 50}px;
         position: absolute;
@@ -65,7 +68,7 @@ class HandClock extends HTMLElement {
         width: ${size / 2.7}px;
       }
       .second::after {
-      background: red;
+      	background: ${color_second};
         height: ${size < 200 ? 1 : 2}px;
         margin-top: -1px;
         width: ${size / 2.4}px;
@@ -114,14 +117,12 @@ class HandClock extends HTMLElement {
 		renderClockHands(this);
 	}
 }
-
 // Register DOM element
 customElements.define('hand-clock', HandClock);
 
 
 // PJaxRouter
 // - - - - - - - - - - - - - - - - - - - - - - - -
-
 /*
 var router = new PJaxRouter({
 	container: document.getElementById("content"), // container where datas will be striped/appended
@@ -166,12 +167,8 @@ var router = new PJaxRouter({
 */
 
 
-
-
 // FancyBox V3
 // - - - - - - - - - - - - - - - - - - - - - - - -
-
-
 $('[data-fancybox]').fancybox({
 
 	// Close existing modals
@@ -514,6 +511,16 @@ $('[data-fancybox]').fancybox({
 		}
 	}
 });
+
+
+// DarkModeToggle
+// - - - - - - - - - - - - - - - - - - - - - - - -
+window.addEventListener('colorschemechange', (e) => {
+	document.body.classList.toggle('dark', e.target.mode === 'dark');
+});
+if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+	console.log('🎉 Dark mode is supported');
+}
 
 
 // Console

@@ -8,6 +8,14 @@
 $picnic-transition: all .15s ease-in-out;
 
 
+
+body {
+  transition:
+          color .3s ease-in-out,
+          background-color  .3s ease-in-out;
+}
+
+
 html {
   cursor: default;
 }

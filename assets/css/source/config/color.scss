@@ -8,9 +8,17 @@ html {
   color: $font-color;
   background-color: $background-color;
 
+  g {
+    fill: $font-color !important;
+  }
+
   .dark {
-    color: $background-color;
+    color: $background-color !important;
     background-color: $font-color;
+
+    g {
+      fill: $background-color !important;
+    }
   }
 }
 
@@ -18,8 +26,10 @@ html {
 -------------------------------------------------- */
 :link, :visited {
   color: $font-color;
+}
 
-  .dark {
+.dark {
+  :link, :visited {
     color: $background-color;
   }
 }
