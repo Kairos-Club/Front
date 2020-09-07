@@ -380,7 +380,7 @@ $('[data-fancybox]').fancybox({
 	// ==============
 
 	// Try to focus on the first focusable element after opening
-	autoFocus: true,
+	autoFocus: false,
 
 	// Put focus back to active element after closing
 	backFocus: true,
