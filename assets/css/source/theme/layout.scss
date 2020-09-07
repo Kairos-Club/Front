@@ -330,6 +330,14 @@ body:hover {
 
     .avatar.ghost {
       border-radius: 100% 100% 45% 45%;
+      //mix-blend-mode: overlay;
+      //background-color: $background-color;
+      //outline: 1px solid red;
+    }
+
+    .avatar.app {
+      border-radius: $door-padding;
+      margin-right: -$door-padding/2;
       //background-color: $background-color;
       //outline: 1px solid red;
     }
