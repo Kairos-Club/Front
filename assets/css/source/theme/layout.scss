@@ -3,25 +3,19 @@
 -------------------------------------------------- */
 @import '../config/config';
 
-
-
-$picnic-transition: all .15s ease-in-out;
-
-
-
-body {
-  transition:
-          color .3s ease-in-out,
-          background-color  .3s ease-in-out;
-}
-
-
-html {
+html, body {
+  min-height: 100vh;
   cursor: default;
 }
 
 * {
   scroll-behavior: smooth;
+}
+
+body {
+  transition:
+          color .3s ease-in-out,
+          background-color  .3s ease-in-out;
 }
 
 /* z-index
@@ -45,6 +39,7 @@ p a:hover {
 }
 
 .page-content {
+  min-height: 100%;
   padding: ($door-size + $door-padding) $door-size $door-size*3 $door-size*4;
   p {
     max-width: 600px;
