@@ -480,6 +480,11 @@ svg path {
   margin: 0 auto !important;
   padding: $door-size;
 
+  &.typeform {
+    padding: 0;
+    overflow: hidden;
+  }
+
   border-radius: $door-padding/2;
 
   @include background-box();

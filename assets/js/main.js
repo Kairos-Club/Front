@@ -523,6 +523,18 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
 }
 
 
+// Typeform
+// - - - - - - - - - - - - - - - - - - - - - - - -
+window.addEventListener("DOMContentLoaded", function() {
+	var el = document.getElementById("typeform-test");
+	window.typeformEmbed.makeWidget(el, "https://form.typeform.com/to/XjSbD0Ss", {
+		hideFooter: true,
+		hideHeaders: true,
+		opacity: 0
+	});
+});
+
+
 // Console
 // - - - - - - - - - - - - - - - - - - - - - - - -
 console.log("%cᕦ(ò_ó*)ᕤ\na website by Muraker\nwww.muraker.com", "font-size:15px");
